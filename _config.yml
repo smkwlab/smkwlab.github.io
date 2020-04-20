@@ -1,1 +1,6 @@
 theme: jekyll-theme-leap-day
+title: 下川研究室
+description: 九州産業大学　理工学部　情報科学科
+show_downloads: false
+github:
+  is_project_page: false
