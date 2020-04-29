@@ -25,6 +25,7 @@ title: スペシャリスト育成プログラム
 
 
 ## スケジュール
+
 | 日付 | 内容 |
 | ---- | ---- |
 | 5月~6月 | プログラム参加者募集～選考 |
@@ -48,7 +49,7 @@ Room Environment Visualization System
 部屋環境可視化することで、自分にあった座席を選んで貰うシステム
 
 スライド：
-https://83bf7dc9-658c-4270-a1c6-0a47fb21ead2.usrfiles.com/ugd/83bf7d_67a1bc50a24a429db41a1ab3d374b7a2.pdf
+[最終発表会でつかったスライド](https://83bf7dc9-658c-4270-a1c6-0a47fb21ead2.usrfiles.com/ugd/83bf7d_67a1bc50a24a429db41a1ab3d374b7a2.pdf)
 
 ## 沖縄観光編
 美らSUNビーチ
