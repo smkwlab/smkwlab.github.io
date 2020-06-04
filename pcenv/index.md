@@ -20,11 +20,11 @@ github:
 自分が使っている PC の環境に合わせて作業をすること。
 
 - パッケージ管理ソフト
- - Chocolatey (Windows の場合)
- - Homebrew (Mac の場合)
+  - Chocolatey (Windows の場合)
+  - Homebrew (Mac の場合)
 - Git
 - GitHub Desktop
- - これに先立って GitHub のアカウント作成についても説明する
+  - これに先立って GitHub のアカウント作成についても説明する
 - Visual Studio Code
 
 
