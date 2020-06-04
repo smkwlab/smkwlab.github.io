@@ -1,6 +1,8 @@
 ---
 title: PC環境構築手順
 description: 下川研究室
+github:
+  is_project_page: true
 ---
 ## はじめに
 
