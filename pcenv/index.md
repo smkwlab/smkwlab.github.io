@@ -1,5 +1,6 @@
 ---
 title: PC環境構築手順
+description: 下川研究室
 ---
 ## はじめに
 
@@ -66,12 +67,11 @@ Mac では Homebrew というパッケージ管理ソフトを利用する。
 
 Git では中央リポジトを利用する。
 下川研では中央リポジトリとして GitHub.com のサービスを利用する。
-そこで  GitHub.com のアカウントを取得する。次に Git および GitHub の GUI である GitHub Desktop をインストールする。
+そこで [このドキュメント](github-account.pdf)に従って GitHub のアカウントを登録する
 
-### GitHub アカウント
-
-[このドキュメント](github-account.pdf)に従ってアカウントを登録する
-
+下川研では、GitHub に [smkwlab organization](https://github.com/smkwlab/)を作成し、
+共同作業に利用している。
+この登録作業は下川にしか出来ないので、登録した GitHub アカウントを、下川まで連絡する。
 
 ##GitHub Desktop
 
@@ -88,3 +88,22 @@ Git や GitHub を操作するための GUI として GitHub Desktop を使う�
 - ターミナル上で **`brew cask install github`** を実行
 
 
+## Visual Studio Code
+
+Visual Studio Code(以下 VScode) は汎用エディタである。
+下川研では Markdown ファイルの編集演習を行う。
+この際に VScode の preview モードが便利なので、これを利用する。
+なお、TeraPad や Eclipse の代わりにも使えるので、興味がある人は使ってみるとよい。
+さらに GitHub Desktop も使う必要をなくすこともできる。
+
+### Windowsの場合
+
+- 管理者権限の PowerShell 上で **`choco install -y vscode`** を実行
+
+### Mac の場合
+       
+- ターミナル上で **`brew cask install visual-studio-code`** を実行
+
+### 日本語化
+VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない
+英語表示のまま使っても何も問題はない
