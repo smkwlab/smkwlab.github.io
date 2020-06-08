@@ -1,4 +1,5 @@
 # smkwlab.github.io
 
-https://smkwlab.github.io/ のソース
+http://www.nw.is.kyusan-u.ac.jp/ のソース
 
+実体は http://smkwlab.github.io/
