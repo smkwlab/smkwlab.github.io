@@ -110,5 +110,5 @@ Visual Studio Code(以下 VScode) は汎用エディタである。
 - ターミナル上で **`brew cask install visual-studio-code`** を実行
 
 ### 日本語化
-VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない
+VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
 英語表示のまま使っても何も問題はない
