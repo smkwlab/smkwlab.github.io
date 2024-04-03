@@ -93,6 +93,23 @@ Basic SecCap には情報科学科の学生は誰でも参加可能ですが、
 この中で、機械工学科・芸術学部や近隣の病院とも連携して、
 電動ストレッチャー・バランス維持訓練アプリなどの開発に取り組んでいます。
 
+### 5.5 QUNOG
+
+[QUNOG](https://qunog.connpass.com/)とは、九州・沖縄のネットワーク技術者のコミュニティーです。
+インターネットを実際に構築・運用している技術者のコミュニティにも積極的に参加し、
+現役エンジニアや他大学の学生とも交流しています。
+
+### 5.6 イベントネットワークの構築・運用
+
+[長崎県立大学 岡田研究室](https://sun.ac.jp/research/researcher/okadams/)や、
+[福岡女子大学 神屋研究室](http://www.fwu.ac.jp/teachersdatabase/detail/?masterid=148&gakkaid=202&gakubuid=20)とも協力して、
+様々なイベントネットワークの構築・運用に参加しています。
+2023年度は、
+[JANOG52](https://www.janog.gr.jp/meeting/janog52/)、
+[JANOG53](https://www.janog.gr.jp/meeting/janog53/)、
+[CEDEC+KYUSHU 2023](http://cedec-kyushu.jp/2023/) 
+の来場者用ネットワーク構築・運用に参加しました。
+
 ## 6. 卒業研究
 
 情報科学科では、基本的に情報科学演習を受講した研究室で卒業研究に取り組むことになります。
