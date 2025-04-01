@@ -80,7 +80,6 @@ Basic SecCap には情報科学科の学生は誰でも参加可能ですが、
 九産大は、[QTnet](https://www.qtnet.co.jp/) と [ローカル5G の共同研究](https://www.kyusan-u.ac.jp/news/qtnetkyoudoukenkyu20210519/)を実施しています。
 下川研は、この共同研究でも九産大側の取りまとめを担当しています。
 これまでに、[ユースケースに関する発表](https://www.kyusan-u.ac.jp/news/qtnet-221207/)をしました。
-2024年度からは、本格的に卒業研究での取り組みを始めます。
 
 ### 5.3 NTTコミュニケーションズとの共同研究
 
@@ -103,11 +102,12 @@ Basic SecCap には情報科学科の学生は誰でも参加可能ですが、
 
 [長崎県立大学 岡田研究室](https://sun.ac.jp/research/researcher/okadams/)や、
 [福岡女子大学 神屋研究室](http://www.fwu.ac.jp/teachersdatabase/detail/?masterid=148&gakkaid=202&gakubuid=20)とも協力して、
-様々なイベントネットワークの構築・運用に参加しています。
-2023年度は、
-[JANOG52](https://www.janog.gr.jp/meeting/janog52/)、
-[JANOG53](https://www.janog.gr.jp/meeting/janog53/)、
-[CEDEC+KYUSHU 2023](http://cedec-kyushu.jp/2023/) 
+[Team BAKUCHIKU](https://bakuchiku.sunolab.net/) の活動に参加しています。
+
+2024年度は、
+[JANOG54](https://www.janog.gr.jp/meeting/janog54/)、
+[JANOG55](https://www.janog.gr.jp/meeting/janog55/)、
+[CEDEC+KYUSHU 2024](http://cedec-kyushu.jp/2024/) 
 の来場者用ネットワーク構築・運用に参加しました。
 
 ## 6. 卒業研究
