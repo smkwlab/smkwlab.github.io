@@ -58,7 +58,7 @@ LaTeX は聞いたことない人のほうが多いかもしれません。
 
 このプロジェクトでは、理工学部と芸術学部の学生でチームを組み IT を用いた作品の制作に取り組みます。
 他学部の学生との共同作業は大変ですが、とても有意義なものです。
-完成した作品は福岡市科学館で展示([2023年度](https://www.fukuokacity-kagakukan.jp/news/2023/01/28213.html)、[2024年度](https://www.fukuokacity-kagakukan.jp/news/2024/02/27212.html))しました。
+完成した作品は福岡市科学館で展示([2023年度](https://www.fukuokacity-kagakukan.jp/news/2023/01/28213.html)、[2024年度](https://www.fukuokacity-kagakukan.jp/news/2024/02/27212.html)、[2025年度](https://www.fukuokacity-kagakukan.jp/news/2025/02/21924.html))しました。
 
 ここで制作したものが卒業研究に直接つながることは、ほとんどありません。
 しかし、この共同作業の経験は、卒業研究だけではなく、様々な場面で役に立ちます。
