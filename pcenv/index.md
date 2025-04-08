@@ -4,7 +4,7 @@ description: 下川研究室
 github:
   is_project_page: true
 ---
-# はじめに
+# 1. はじめに
 
 下川研では研究活動を行う際に、様々なソフトウェアを利用する。
 代表的なものとして以下のようなものがある。
@@ -14,7 +14,7 @@ github:
 - Visual Studio Code : 汎用エディタ
 - Docker Desktop : コンテナ実行環境
 
-# インストールするもの
+# 2. インストールするもの
 
 ここでは、以下のソフトウェアのインストール方法を説明する。
 また、Windows と Mac 用のインストール方法を説明する。
@@ -29,7 +29,7 @@ github:
 - Visual Studio Code
 - Docker Desktop
 
-# パッケージ管理ソフト
+# 3. パッケージ管理ソフト
 
 各種ソフトウェアを管理するのに、パッケージ管理ソフトと呼ばれるソフトウェアを利用する。
 これにより様々なソフトウェアの管理を一元化する。
@@ -42,7 +42,7 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
 しかし、慣れてくると分かるが GUI で操作するよりも、
 コマンドラインで操作するほうが再現性が高く、間違いが少ない。
 
-## Windows : Chocolatey
+## 3.1 Windows : Chocolatey
 
 1. `PowerShell` を管理者権限で実行する
  1. Windows メニューから Windows Power Shell のメニューを開く
@@ -54,7 +54,7 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
  - ウィンドウ上で **`Ctrl-v  Enter`** を入力
  - これで Chcolatey のインストールが完了
 
-## Mac : Homebrew
+## 3.2 Mac : Homebrew
 
 1. `ターミナル` を実行する
  1. **ドック** から `Launchpad` を実行
@@ -72,18 +72,18 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-## Git
+# 4. Git
 
-### Windows
+## 4.1 Windows
 
 - 管理者権限で起動した PowerShell 上で **`choco install -y git`** を実行し、git をインストールする
 
-### Mac
+## 4.2 Mac
 
 - Mac は標準でも Git がインストールされているが、バージョンが古い。 そこで Homebrew を使い最新版の Git をインストールする。
 - ターミナル上で **`brew install git`** を実行する
 
-## GitHub
+# 5. GitHub
 
 Git では中央リポジトを利用する。
 下川研では中央リポジトリとして GitHub.com のサービスを利用する。
@@ -93,20 +93,20 @@ Git では中央リポジトを利用する。
 共同作業に利用している。
 この登録作業は下川にしか出来ないので、登録した GitHub アカウントを、下川まで連絡する。
 
-## GitHub Desktop
+# 6. GitHub Desktop
 
 Git や GitHub を操作するための GUI として GitHub Desktop を使う。
 本来はコマンドラインの使い方を覚えてほしいが、まずは使えるようになることが先決。
 
-### Windows の場合
+## 6.1 Windows の場合
 
 - 管理者権限の PowerShell 上で **`choco install -y github-desktop`** を実行
 
-### Mac の場合
+## 6.2 Mac の場合
 
 - ターミナル上で **`brew install --cask github`** を実行
 
-## Visual Studio Code
+# 7. Visual Studio Code
 
 Visual Studio Code(以下 VScode) は汎用エディタである。
 下川研では Markdown ファイルの編集演習を行う。
@@ -114,26 +114,26 @@ Visual Studio Code(以下 VScode) は汎用エディタである。
 なお、TeraPad や Eclipse の代わりにも使えるので、興味がある人は使ってみるとよい。
 さらに GitHub Desktop を使う必要をなくすこともできる。
 
-### Windowsの場合
+## 7.1 Windowsの場合
 
 - 管理者権限の PowerShell 上で **`choco install -y vscode`** を実行
 
-### Mac の場合
+## 7.2 Mac の場合
        
 - ターミナル上で **`brew install --cask visual-studio-code`** を実行
 
-### 日本語化
+## 7.3 日本語化
 VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
 英語表示のまま使っても何も問題はない
 
-## Docker Desktop
+# 8. Docker Desktop
 
 Docker Desktop はコンテナ実行環境である。
 
-### Windows の場合
+## 8.1 Windows の場合
 
 - 管理者権限の PowerShell 上で **`choco install -y docker-desktop`** を実行
 
-### Mac の場合
+## 8.2 Mac の場合
 
 - ターミナル上で **`brew install --cask docker`** を実行
