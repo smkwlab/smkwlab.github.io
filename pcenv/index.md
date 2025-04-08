@@ -12,6 +12,7 @@ github:
 - Git : ソフトウェアのバージョン管理
 - GitHub Desktop : Git 用 GUI
 - Visual Studio Code : 汎用エディタ
+- Docker Desktop : コンテナ実行環境
 
 ## インストールするもの
 
@@ -26,7 +27,7 @@ github:
 - GitHub Desktop
   - これに先立って GitHub のアカウント作成についても説明する
 - Visual Studio Code
-
+- Docker Desktop
 
 ## パッケージ管理ソフト
 
@@ -43,7 +44,7 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
 
 ### Windows : Chocolatey
 
-1. PowerShell を管理者権限で実行する
+1. `PowerShell` を管理者権限で実行する
  1. Windows メニューから Windows Power Shell のメニューを開く
  1. Windows Power Shell という項目の上で右クリックし、**管理者として実行する**をクリック
    <img src="powershell-menu.png" width="50%">
@@ -55,7 +56,21 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
 
 ### Mac : Homebrew
 
-1. [この記事](https://qiita.com/rabbit1013/items/1494cf345ff172c3b9cd)を参考に Homebrew をインストールする
+1. `ターミナル` を実行する
+ 1. `ドック` から `Launchpad` を実行
+ 1. `その他` の中の `ターミナル` を実行
+1. [HomeBrew本家](https://brew.sh/ja/) の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
+    ![homebrew](homebrew-install.png)
+1. ターミナル上に貼り付ける
+ - ウィンドウ上で **`Command-v Enter`** を入力
+ - この後 `Password:` と表示されたら、mac のログインパスワードを入力
+ - `Press **Return/Enter** to continue or any other key to abord:` と表示されたら **`Enter`** キーを叩く
+1. Homebrew のインストールが終了するので、以下を実行し、Homebrew を有効化する
+```
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
 
 ## Git
 
@@ -87,11 +102,9 @@ Git や GitHub を操作するための GUI として GitHub Desktop を使う�
 
 - 管理者権限の PowerShell 上で **`choco install -y github-desktop`** を実行
 
-
 ### Mac の場合
 
-- ターミナル上で **`brew cask install github`** を実行
-
+- ターミナル上で **`brew install --cask github`** を実行
 
 ## Visual Studio Code
 
@@ -99,7 +112,7 @@ Visual Studio Code(以下 VScode) は汎用エディタである。
 下川研では Markdown ファイルの編集演習を行う。
 この際に VScode の preview モードが便利なので、これを利用する。
 なお、TeraPad や Eclipse の代わりにも使えるので、興味がある人は使ってみるとよい。
-さらに GitHub Desktop も使う必要をなくすこともできる。
+さらに GitHub Desktop を使う必要をなくすこともできる。
 
 ### Windowsの場合
 
@@ -107,8 +120,20 @@ Visual Studio Code(以下 VScode) は汎用エディタである。
 
 ### Mac の場合
        
-- ターミナル上で **`brew cask install visual-studio-code`** を実行
+- ターミナル上で **`brew install --cask visual-studio-code`** を実行
 
 ### 日本語化
 VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
 英語表示のまま使っても何も問題はない
+
+## Docker Desktop
+
+Docker Desktop はコンテナ実行環境である。
+
+### Windows の場合
+
+- 管理者権限の PowerShell 上で **`choco install -y docker-desktop`** を実行
+
+### Mac の場合
+
+- ターミナル上で **`brew install --cask docker`** を実行
