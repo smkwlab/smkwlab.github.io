@@ -4,7 +4,7 @@ description: 下川研究室
 github:
   is_project_page: true
 ---
-## はじめに
+# はじめに
 
 下川研では研究活動を行う際に、様々なソフトウェアを利用する。
 代表的なものとして以下のようなものがある。
@@ -14,7 +14,7 @@ github:
 - Visual Studio Code : 汎用エディタ
 - Docker Desktop : コンテナ実行環境
 
-## インストールするもの
+# インストールするもの
 
 ここでは、以下のソフトウェアのインストール方法を説明する。
 また、Windows と Mac 用のインストール方法を説明する。
@@ -29,7 +29,7 @@ github:
 - Visual Studio Code
 - Docker Desktop
 
-## パッケージ管理ソフト
+# パッケージ管理ソフト
 
 各種ソフトウェアを管理するのに、パッケージ管理ソフトと呼ばれるソフトウェアを利用する。
 これにより様々なソフトウェアの管理を一元化する。
@@ -42,7 +42,7 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
 しかし、慣れてくると分かるが GUI で操作するよりも、
 コマンドラインで操作するほうが再現性が高く、間違いが少ない。
 
-### Windows : Chocolatey
+## Windows : Chocolatey
 
 1. `PowerShell` を管理者権限で実行する
  1. Windows メニューから Windows Power Shell のメニューを開く
@@ -54,17 +54,17 @@ Windows では  *Chcolatey* , Mac では *Homebrew* というパッケージ管�
  - ウィンドウ上で **`Ctrl-v  Enter`** を入力
  - これで Chcolatey のインストールが完了
 
-### Mac : Homebrew
+## Mac : Homebrew
 
 1. `ターミナル` を実行する
- 1. `ドック` から `Launchpad` を実行
- 1. `その他` の中の `ターミナル` を実行
+ 1. **ドック** から `Launchpad` を実行
+ 1. **その他** の中の `ターミナル` を実行
 1. [HomeBrew本家](https://brew.sh/ja/) の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
     ![homebrew](homebrew-install.png)
 1. ターミナル上に貼り付ける
  - ウィンドウ上で **`Command-v Enter`** を入力
- - この後 `Password:` と表示されたら、mac のログインパスワードを入力
- - `Press **Return/Enter** to continue or any other key to abord:` と表示されたら **`Enter`** キーを叩く
+ - この後 **Password:** と表示されたら、mac のログインパスワードを入力
+ - Press **Return/Enter** to continue or any other key to abord: と表示されたら `Enter` キーを叩く
 1. Homebrew のインストールが終了するので、以下を実行し、Homebrew を有効化する
 ```
 echo >> ~/.zprofile
