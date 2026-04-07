@@ -87,7 +87,7 @@ Basic SecCap には情報科学科の学生は誰でも参加可能ですが、
 
 2025年度は、
 [JANOG56](https://www.janog.gr.jp/meeting/janog56/)、
-[CEDEC+KYUSHU 2025](http://cedec-kyushu.jp/2025/) 、
+[CEDEC+KYUSHU 2025](http://cedec-kyushu.jp/2025/)、
 [QUNOG34](https://qunog.connpass.com/event/381663/)
 の来場者用ネットワーク構築・運用に参加しました。
 
