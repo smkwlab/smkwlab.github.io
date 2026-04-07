@@ -29,7 +29,7 @@ title: 下川研究室
 プログラミングの演習としては、主に Java を使って、これまでに勉強してきた内容の復習をします。
 現時点でプログラミングが得意である必要はありません。
 ただし、自らプログラミングを習得しようという意欲は必要です。
-[Paiza](https://paiza.jp/) や [AtCoder](https://atcoder.jp/)を活用します。
+[Paiza](https://paiza.jp/) や [AtCoder](https://atcoder.jp/) を活用します。
 
 下川研では以下のようなソフトウェア/ツールを利用していきます。
 
@@ -88,7 +88,7 @@ Basic SecCap には情報科学科の学生は誰でも参加可能ですが、
 2025年度は、
 [JANOG56](https://www.janog.gr.jp/meeting/janog56/)、
 [CEDEC+KYUSHU 2025](http://cedec-kyushu.jp/2025/) 、
-[QUNOG34](https://qunog.connpass.com/event/381663/)、
+[QUNOG34](https://qunog.connpass.com/event/381663/)
 の来場者用ネットワーク構築・運用に参加しました。
 
 ## 6. 卒業研究
