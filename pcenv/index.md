@@ -54,21 +54,21 @@ Windows では  *WinGet* , Mac では *Homebrew* というパッケージ管理�
 1. [Homebrew本家](https://brew.sh/ja/) の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
     ![homebrew](homebrew-install.png)
 1. ターミナル上に貼り付ける
- - ウィンドウ上で **`Command-v Enter`** を入力
- - この後 **Password:** と表示されたら、mac のログインパスワードを入力
- - Press **Return/Enter** to continue or any other key to abord: と表示されたら `Enter` キーを叩く
+    - ウィンドウ上で **`Command-v Enter`** を入力
+    - この後 **Password:** と表示されたら、mac のログインパスワードを入力
+    - Press **Return/Enter** to continue or any other key to abort: と表示されたら `Enter` キーを叩く
 1. Homebrew のインストールが終了するので、以下を実行し、Homebrew を有効化する
-```
-echo >> ~/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
+    ```
+    echo >> ~/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ```
 
 # 4. Visual Studio Code
 
 Visual Studio Code(以下 VSCode) は汎用エディタである。
 
-## 4.1 Windowsの場合
+## 4.1 Windows の場合
 
 - PowerShell 上で以下を実行
   ```
@@ -89,14 +89,14 @@ VSCode インストール後、[この記事](https://www.atmarkit.co.jp/ait/art
 
 # 5. Git
 
-## 5.1 Windows
+## 5.1 Windows の場合
 
 - PowerShell 上で以下を実行
   ```
   winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
   ```
 
-## 5.2 Mac
+## 5.2 Mac の場合
 
 - Mac は標準でも Git がインストールされているが、バージョンが古い。 そこで Homebrew を使い最新版の Git をインストールする。
 - ターミナル上で以下を実行する
