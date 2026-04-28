@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PC環境構築手順 | 下川研究室</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PC環境構築手順" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="下川研究室" />
+<meta property="og:description" content="下川研究室" />
+<meta property="og:site_name" content="下川研究室" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PC環境構築手順" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"下川研究室","headline":"PC環境構築手順","url":"/pr-preview/pr-26/pcenv/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/pr-preview/pr-26/assets/css/style.css?v=077b47899acb749068facd093c62182ae5402474">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/pr-preview/pr-26/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>PC環境構築手順</h1>
+        <p>下川研究室</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+      
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1 id="1-はじめに">1. はじめに</h1>
+
+<p>下川研では研究活動を行う際に、様々なソフトウェアを利用する。
+代表的なものとして以下のようなものがある。</p>
+
+<ul>
+  <li>Visual Studio Code : 汎用エディタ</li>
+  <li>Git : ソフトウェアのバージョン管理</li>
+  <li>GitHub Desktop : Git 用 GUI</li>
+  <li>Docker Desktop : コンテナ実行環境</li>
+</ul>
+
+<h1 id="2-インストールするもの">2. インストールするもの</h1>
+
+<p>ここでは、以下のソフトウェアのインストール方法を説明する。
+また、Windows と Mac 用のインストール方法を説明する。
+自分が使っている PC の環境に合わせて作業をすること。</p>
+
+<ul>
+  <li>パッケージ管理ソフト
+    <ul>
+      <li>WinGet (Windows の場合)</li>
+      <li>Homebrew (Mac の場合)</li>
+    </ul>
+  </li>
+  <li>Visual Studio Code</li>
+  <li>Git</li>
+  <li>GitHub Desktop
+    <ul>
+      <li>これに先立って GitHub のアカウント作成についても説明する</li>
+    </ul>
+  </li>
+  <li>Docker Desktop</li>
+</ul>
+
+<h1 id="3-パッケージ管理ソフト">3. パッケージ管理ソフト</h1>
+
+<p>各種ソフトウェアを管理するのに、パッケージ管理ソフトと呼ばれるソフトウェアを利用する。
+これにより様々なソフトウェアの管理を一元化する。
+パッケージ管理ソフトは、パッケージマネージャと呼ばれることもある。</p>
+
+<p>Windows では  <em>WinGet</em> , Mac では <em>Homebrew</em> というパッケージ管理ソフトを利用する。</p>
+
+<p>パッケージ管理ソフトを使ってコマンドラインでインストール作業を行う。
+最初のうちは、コマンド入力が大変に感じるかもしれない。
+しかし、慣れてくると分かるが GUI で操作するよりも、
+コマンドラインで操作するほうが再現性が高く、間違いが少ない。</p>
+
+<h2 id="31-windows--winget">3.1 Windows : WinGet</h2>
+
+<ul>
+  <li>Windows 11 では WinGet は標準でインストール済みなので作業は不要</li>
+</ul>
+
+<h2 id="32-mac--homebrew">3.2 Mac : Homebrew</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">ターミナル</code> を実行する</li>
+  <li><strong>ドック</strong> から <code class="language-plaintext highlighter-rouge">アプリ</code> を実行</li>
+  <li><code class="language-plaintext highlighter-rouge">ターミナル</code> を実行</li>
+  <li><a href="https://brew.sh/ja/">HomeBrew本家</a> の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
+ <img src="/pr-preview/pr-26/pcenv/homebrew-install.png" alt="homebrew" /></li>
+  <li>ターミナル上に貼り付ける
+    <ul>
+      <li>ウィンドウ上で <strong><code class="language-plaintext highlighter-rouge">Command-v Enter</code></strong> を入力</li>
+      <li>この後 <strong>Password:</strong> と表示されたら、mac のログインパスワードを入力</li>
+      <li>Press <strong>Return/Enter</strong> to continue or any other key to abord: と表示されたら <code class="language-plaintext highlighter-rouge">Enter</code> キーを叩く</li>
+    </ul>
+  </li>
+  <li>Homebrew のインストールが終了するので、以下を実行し、Homebrew を有効化する
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo &gt;&gt; ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' &gt;&gt; ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="4-visual-studio-code">4. Visual Studio Code</h1>
+
+<p>Visual Studio Code(以下 VSCode) は汎用エディタである。</p>
+
+<h2 id="41-windowsの場合">4.1 Windowsの場合</h2>
+
+<ul>
+  <li>PowerShell 上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Microsoft.VisualStudioCode --source winget
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="42-mac-の場合">4.2 Mac の場合</h2>
+
+<ul>
+  <li>ターミナル上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask visual-studio-code
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="43-日本語化">4.3 日本語化</h2>
+<p>VScode インストール後、<a href="https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html">この記事</a>を参考に表示言語を日本語にしておくと便利かもしれない。
+英語表示のまま使っても何も問題はない</p>
+
+<h1 id="5-git">5. Git</h1>
+
+<h2 id="51-windows">5.1 Windows</h2>
+
+<ul>
+  <li>PowerShell 上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="52-mac">5.2 Mac</h2>
+
+<ul>
+  <li>Mac は標準でも Git がインストールされているが、バージョンが古い。 そこで Homebrew を使い最新版の Git をインストールする。</li>
+  <li>ターミナル上で以下を実行する
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install git
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="6-github">6. GitHub</h1>
+
+<p>Git では中央リポジトを利用する。
+下川研では中央リポジトリとして GitHub.com のサービスを利用する。
+そこで <a href="/pr-preview/pr-26/pcenv/github-account.pdf">このドキュメント</a>に従って GitHub のアカウントを登録する</p>
+
+<!--
+下川研では、GitHub に [smkwlab organization](https://github.com/smkwlab/)を作成し、
+共同作業に利用している。
+この登録作業は下川にしか出来ないので、登録した GitHub アカウントを、下川まで連絡する。
+-->
+
+<h1 id="7-github-desktop">7. GitHub Desktop</h1>
+
+<p>Git や GitHub を操作するための GUI として GitHub Desktop を使う。
+本来はコマンドラインの使い方を覚えてほしいが、まずは使えるようになることが先決。</p>
+
+<h2 id="71-windows-の場合">7.1 Windows の場合</h2>
+
+<ul>
+  <li>PowerShell 上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id GitHub.GitHubDesktop
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="72-mac-の場合">7.2 Mac の場合</h2>
+
+<ul>
+  <li>ターミナル上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask github
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="8-docker-desktop">8. Docker Desktop</h1>
+
+<p>Docker Desktop はコンテナ実行環境である。</p>
+
+<h2 id="81-windows-の場合">8.1 Windows の場合</h2>
+
+<ul>
+  <li>PowerShell 上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Docker.DockerDesktop --source winget
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="82-mac-の場合">8.2 Mac の場合</h2>
+
+<ul>
+  <li>ターミナル上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask docker
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
