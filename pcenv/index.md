@@ -49,9 +49,9 @@ Windows では  *WinGet* , Mac では *Homebrew* というパッケージ管理�
 ## 3.2 Mac : Homebrew
 
 1. `ターミナル` を実行する
- 1. **ドック** から `アプリ` を実行
- 1. `ターミナル` を実行
-1. [HomeBrew本家](https://brew.sh/ja/) の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
+    1. **ドック** から `アプリ` を実行
+    1. `ターミナル` を実行
+1. [Homebrew本家](https://brew.sh/ja/) の以下の右端の赤い◯で囲まれた部分をクリックし、インストール用コマンドラインをコピーする
     ![homebrew](homebrew-install.png)
 1. ターミナル上に貼り付ける
  - ウィンドウ上で **`Command-v Enter`** を入力
@@ -76,14 +76,14 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
   ```
 
 ## 4.2 Mac の場合
-       
+
 - ターミナル上で以下を実行
   ```
   brew install --cask visual-studio-code
   ```
 
 ## 4.3 日本語化
-VScode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
+VSCode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
 英語表示のまま使っても何も問題はない
 
 
