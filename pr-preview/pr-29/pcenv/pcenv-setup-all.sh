@@ -36,9 +36,12 @@ echo "Install GitHub Desktop"
 brew install --cask github
 
 echo "Install VS Code extensions"
-CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+CODE="$(command -v code || true)"
+if [[ -z "$CODE" ]]; then
+    CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+fi
 if [[ ! -x "$CODE" ]]; then
-    echo "ERROR: code command not found at $CODE"
+    echo "ERROR: code command not found on PATH or at $CODE"
     echo "VS Code may not be installed properly."
     exit 1
 fi
