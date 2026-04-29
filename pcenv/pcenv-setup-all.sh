@@ -12,12 +12,19 @@ if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Set up Homebrew environment (Apple Silicon / Intel)
-if [[ "$(uname -m)" == "arm64" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    eval "$(/usr/local/bin/brew shellenv)"
+# Set up Homebrew environment
+BREW_BIN="$(command -v brew || true)"
+if [[ -z "$BREW_BIN" ]]; then
+    if [[ -x /opt/homebrew/bin/brew ]]; then
+        BREW_BIN="/opt/homebrew/bin/brew"
+    elif [[ -x /usr/local/bin/brew ]]; then
+        BREW_BIN="/usr/local/bin/brew"
+    else
+        echo "ERROR: brew command not found after Homebrew installation."
+        exit 1
+    fi
 fi
+eval "$("$BREW_BIN" shellenv)"
 
 echo "Install Visual Studio Code"
 brew install --cask visual-studio-code

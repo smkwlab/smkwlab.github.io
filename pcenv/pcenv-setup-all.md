@@ -11,24 +11,27 @@ github:
 
 ## 1.1 Windows の場合
 
-- wsl をインストール
+- WSL をインストールする
+    1. **スタートメニュー** の **アプリ,設定,ドキュメントの検索** に `wt` と入力
 
-1. **スタートメニュー** の **アプリ,設定,ドキュメントの検索** に `wt` と入力
+        ![スタートメニュー](start-menu1-mini2.png)
+    2. `管理者として実行(A)` をクリック
 
-    ![スタートメニュー](start-menu1-mini2.png)
-2. `管理者として実行(A)` をクリック
-
-    ![スタートメニュー](start-menu2-mini2.png)
-3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
-
-- 開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
-    ```
-wsl --install --no-distribution
-    ```
-- 残りをインストール
-
-[pcenv-setup-all.bat](pcenv-setup-all.bat) をダウンロードして実行。
+        ![スタートメニュー](start-menu2-mini2.png)
+    3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
+    4. 開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
+        ```
+        wsl --install --no-distribution
+        ```
+- 残りのソフトをインストール
+    1. [pcenv-setup-all.bat](pcenv-setup-all.bat) をダウンロード
+    2. ダウンロードした `pcenv-setup-all.bat` をダブルクリックして実行（うまく実行できない場合は、右クリックから「管理者として実行」を選択）
 
 ## 1.2 Mac の場合
 
-[pcenv-setup-all.sh](pcenv-setup-all.sh) をダウンロードして実行。
+1. [pcenv-setup-all.sh](pcenv-setup-all.sh) をダウンロード
+2. `ターミナル` を開き、ダウンロードした場所に移動
+3. 以下のコマンドを実行
+    ```
+    bash pcenv-setup-all.sh
+    ```

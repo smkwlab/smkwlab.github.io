@@ -113,8 +113,8 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 1. 以下を実行
     ```
-    code  --install-extension ms-vscode-remote.vscode-remote-extensionpack
-    code  --install-extension MS-CEINTL.vscode-language-pack-ja
+    code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+    code --install-extension MS-CEINTL.vscode-language-pack-ja
     ```
 
 # 5. Git
