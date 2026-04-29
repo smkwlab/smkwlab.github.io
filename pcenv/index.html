@@ -9,17 +9,17 @@
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="PC環境構築手順" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="下川研究室" />
-<meta property="og:description" content="下川研究室" />
+<meta name="description" content="下川研究室用開発環境" />
+<meta property="og:description" content="下川研究室用開発環境" />
 <meta property="og:site_name" content="下川研究室" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PC環境構築手順" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"下川研究室","headline":"PC環境構築手順","url":"/pcenv/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c57fd2dd6b24e2b33d3f33a37fbe5839e5debd9f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=eb63e7244f56be9ff0c67482b858700ac3683af8">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
       <header>
         <h1>PC環境構築手順</h1>
-        <p>下川研究室</p>
+        <p>下川研究室用開発環境</p>
       </header>
 
       <div id="banner">
@@ -59,6 +59,12 @@
   <li>Docker Desktop : コンテナ実行環境</li>
 </ul>
 
+<h2 id="11-以下の説明を読み飛ばしてとりあえず全部インストールしたい場合">1.1 以下の説明を読み飛ばして、とりあえず全部インストールしたい場合</h2>
+
+<p><a href="pcenv-setup-all.html">こちら</a> を参照。</p>
+
+<p>後からで良いので、説明は読んでね。</p>
+
 <h1 id="2-インストールするもの">2. インストールするもの</h1>
 
 <p>ここでは、以下のソフトウェアのインストール方法を説明する。
@@ -72,6 +78,7 @@
       <li>Homebrew (Mac の場合)</li>
     </ul>
   </li>
+  <li>WSL (Windows の場合のみ)</li>
   <li>Visual Studio Code</li>
   <li>Git</li>
   <li>GitHub Desktop
@@ -82,7 +89,7 @@
   <li>Docker Desktop</li>
 </ul>
 
-<h1 id="3-パッケージ管理ソフト">3. パッケージ管理ソフト</h1>
+<h1 id="3-パッケージ管理ソフトと仮想化環境">3. パッケージ管理ソフトと仮想化環境</h1>
 
 <p>各種ソフトウェアを管理するのに、パッケージ管理ソフトと呼ばれるソフトウェアを利用する。
 これにより様々なソフトウェアの管理を一元化する。
@@ -95,11 +102,21 @@
 しかし、慣れてくると分かるが GUI で操作するよりも、
 コマンドラインで操作するほうが再現性が高く、間違いが少ない。</p>
 
-<h2 id="31-windows--winget">3.1 Windows : WinGet</h2>
+<p>また、仮想化環境として、Windows では WSL(Windows Subsystem for Linux) を利用する。
+Mac では特別な追加ソフトは不要。</p>
 
-<ul>
-  <li>Windows 11 では WinGet は標準でインストール済みなので作業は不要</li>
-</ul>
+<h2 id="31-windows--winget-と-wsl">3.1 Windows : WinGet と WSL</h2>
+
+<p>Windows 11 では WinGet は標準でインストール済みなので作業は不要。</p>
+
+<p>WSL は以下の手順でインストールする。</p>
+
+<ol>
+  <li><a href="/pcenv/pcenv-setup-wsl.bat">pcenv-setup-wsl.bat</a> をダウンロード</li>
+  <li>ダウンロードした <code class="language-plaintext highlighter-rouge">pcenv-setup-wsl.bat</code> を右クリックし、<code class="language-plaintext highlighter-rouge">管理者として実行</code> を選択</li>
+  <li><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</li>
+  <li>インストール完了後、PC を再起動</li>
+</ol>
 
 <h2 id="32-mac--homebrew">3.2 Mac : Homebrew</h2>
 
@@ -149,9 +166,27 @@
   </li>
 </ul>
 
-<h2 id="43-日本語化">4.3 日本語化</h2>
-<p>VSCode インストール後、<a href="https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html">この記事</a>を参考に表示言語を日本語にしておくと便利かもしれない。
-英語表示のまま使っても何も問題はない</p>
+<h2 id="43-拡張機能のインストール">4.3 拡張機能のインストール</h2>
+
+<p>以下の拡張機能をインストールする。</p>
+
+<ul>
+  <li>リモート開発用拡張パック (Dev Containers / WSL / SSH)</li>
+  <li>Docker 拡張</li>
+  <li>日本語化拡張</li>
+</ul>
+
+<p>手順:</p>
+
+<ol>
+  <li>ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）</li>
+  <li>以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+ code --install-extension ms-azuretools.vscode-docker
+ code --install-extension MS-CEINTL.vscode-language-pack-ja
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h1 id="5-git">5. Git</h1>
 
@@ -211,7 +246,8 @@
 
 <h1 id="8-docker-desktop">8. Docker Desktop</h1>
 
-<p>Docker Desktop はコンテナ実行環境である。</p>
+<p>Docker Desktop はコンテナ実行環境である。
+インストール後に再起動が必要になるかも。</p>
 
 <h2 id="81-windows-の場合">8.1 Windows の場合</h2>
 
