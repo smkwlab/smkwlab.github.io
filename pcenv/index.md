@@ -31,11 +31,11 @@ github:
   - WinGet (Windows の場合)
   - Homebrew (Mac の場合)
 - WSL (Windows の場合のみ)
-- Visual Studio Code
 - Git
+- GitHub（アカウント作成）
 - GitHub Desktop
-  - これに先立って GitHub のアカウント作成についても説明する
 - Docker Desktop
+- Visual Studio Code
 
 # 3. パッケージ管理ソフトと仮想化環境
 
@@ -68,18 +68,13 @@ Windows 11 では WinGet は標準でインストール済みなので作業は�
     ![管理者として実行を選択](start-menu2-mini2.png)
 3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
 
-WSL は以下の手順でインストールする。
+WSL を有効化する。管理者として起動した Windows Terminal で以下を実行する。
 
-1. 管理者として起動した Windows Terminal で以下を実行
-    ```
-    wsl --install --no-distribution
-    ```
-2. インストール後、PC を再起動する。再起動後、以降の作業のために改めて管理者として Windows Terminal を起動する。
-3. Ubuntu ディストリビューションをインストールする。管理者として起動した Windows Terminal で以下を実行
-    ```
-    wsl --install -d Ubuntu
-    ```
-4. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
+```
+wsl --install --no-distribution
+```
+
+WSL を完全に有効化するには PC の再起動が必要だが、後の Docker Desktop インストール後にも再起動が必要となるため、ここでは再起動せず、4-8 章を続けて実行する。すべてのインストールが終わってから 9 章で一度だけ再起動する。
 
 ## 3.2 Mac : Homebrew
 
@@ -99,52 +94,16 @@ WSL は以下の手順でインストールする。
     eval "$(/opt/homebrew/bin/brew shellenv)"
     ```
 
-# 4. Visual Studio Code
-
-Visual Studio Code(以下 VSCode) は汎用エディタである。
+# 4. Git
 
 ## 4.1 Windows の場合
-
-- 管理者として起動した Windows Terminal で以下を実行
-  ```
-  winget install -e --id Microsoft.VisualStudioCode --source winget
-  ```
-
-## 4.2 Mac の場合
-
-- ターミナル上で以下を実行
-  ```
-  brew install --cask visual-studio-code
-  ```
-
-## 4.3 拡張機能のインストール
-
-以下の拡張機能をインストールする。
-
-- リモート開発用拡張パック (Dev Containers / WSL / SSH)
-- Docker 拡張
-- 日本語化拡張
-
-手順:
-
-1. ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）
-2. 以下を実行
-    ```
-    code --install-extension ms-vscode-remote.vscode-remote-extensionpack
-    code --install-extension ms-azuretools.vscode-docker
-    code --install-extension MS-CEINTL.vscode-language-pack-ja
-    ```
-
-# 5. Git
-
-## 5.1 Windows の場合
 
 - 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
   ```
 
-## 5.2 Mac の場合
+## 4.2 Mac の場合
 
 - Mac は標準でも Git がインストールされているが、バージョンが古い。 そこで Homebrew を使い最新版の Git をインストールする。
 - ターミナル上で以下を実行する
@@ -152,9 +111,9 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
   brew install git
   ```
 
-# 6. GitHub
+# 5. GitHub
 
-Git では中央リポジトを利用する。
+Git では中央リポジトリを利用する。
 下川研では中央リポジトリとして GitHub.com のサービスを利用する。
 そこで [このドキュメント](github-account.pdf)に従って GitHub のアカウントを登録する
 
@@ -164,40 +123,92 @@ Git では中央リポジトを利用する。
 この登録作業は下川にしか出来ないので、登録した GitHub アカウントを、下川まで連絡する。
 -->
 
-# 7. GitHub Desktop
+# 6. GitHub Desktop
 
 Git や GitHub を操作するための GUI として GitHub Desktop を使う。
 本来はコマンドラインの使い方を覚えてほしいが、まずは使えるようになることが先決。
 
-## 7.1 Windows の場合
+## 6.1 Windows の場合
 
 - 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install -e --id GitHub.GitHubDesktop
   ```
 
-## 7.2 Mac の場合
+## 6.2 Mac の場合
 
 - ターミナル上で以下を実行
   ```
   brew install --cask github
   ```
 
-# 8. Docker Desktop
+# 7. Docker Desktop
 
 Docker Desktop はコンテナ実行環境である。
-インストール後に再起動が必要になるかも。
 
-## 8.1 Windows の場合
+## 7.1 Windows の場合
 
 - 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install -e --id Docker.DockerDesktop --source winget
   ```
 
-## 8.2 Mac の場合
+## 7.2 Mac の場合
 
 - ターミナル上で以下を実行
   ```
   brew install --cask docker
   ```
+
+# 8. Visual Studio Code
+
+Visual Studio Code(以下 VSCode) は汎用エディタである。
+
+## 8.1 Windows の場合
+
+- 管理者として起動した Windows Terminal で以下を実行
+  ```
+  winget install -e --id Microsoft.VisualStudioCode --source winget
+  ```
+
+## 8.2 Mac の場合
+
+- ターミナル上で以下を実行
+  ```
+  brew install --cask visual-studio-code
+  ```
+
+# 9. 再起動と最終セットアップ
+
+3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、最後に VS Code の拡張機能をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップする。
+
+## 9.1 再起動
+
+- Windows の場合: **PC を再起動** する。再起動後、改めて**管理者として Windows Terminal を起動**する。
+- Mac の場合: **新しいターミナル** を開く（新しいタブまたはウィンドウで OK）。
+
+## 9.2 VS Code 拡張機能のインストール
+
+以下の拡張機能をインストールする。
+
+- リモート開発用拡張パック (Dev Containers / WSL / SSH)
+- Docker 拡張
+- 日本語化拡張
+
+9.1 で起動した Windows Terminal / ターミナル で以下を実行する。
+
+```
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension MS-CEINTL.vscode-language-pack-ja
+```
+
+## 9.3 Ubuntu のインストール（Windows のみ）
+
+WSL に Ubuntu ディストリビューションをインストールする。
+
+1. 管理者として起動した Windows Terminal で以下を実行
+    ```
+    wsl --install -d Ubuntu
+    ```
+2. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
