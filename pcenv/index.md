@@ -1,6 +1,6 @@
 ---
 title: PC環境構築手順
-description: 下川研究室
+description: 下川研究室用開発環境
 github:
   is_project_page: true
 ---
@@ -13,6 +13,13 @@ github:
 - Git : ソフトウェアのバージョン管理
 - GitHub Desktop : Git 用 GUI
 - Docker Desktop : コンテナ実行環境
+
+## 1.1 以下の説明を読み飛ばして、とりあえず全部インストールしたい場合
+
+[こちら](pcenv-setup-all.html) を参照。
+
+後からで良いので、説明は読んでね。
+
 
 # 2. インストールするもの
 
@@ -29,7 +36,7 @@ github:
   - これに先立って GitHub のアカウント作成についても説明する
 - Docker Desktop
 
-# 3. パッケージ管理ソフト
+# 3. パッケージ管理ソフトと仮想化環境
 
 各種ソフトウェアを管理するのに、パッケージ管理ソフトと呼ばれるソフトウェアを利用する。
 これにより様々なソフトウェアの管理を一元化する。
@@ -42,9 +49,24 @@ Windows では  *WinGet* , Mac では *Homebrew* というパッケージ管理�
 しかし、慣れてくると分かるが GUI で操作するよりも、
 コマンドラインで操作するほうが再現性が高く、間違いが少ない。
 
-## 3.1 Windows : WinGet
+また、仮想化環境として、Windows では WSL(Windows Subsystem for Linux) を利用する。
+Mac では特別な追加ソフトは不要。
+
+## 3.1 Windows : WinGet と WSL
 
 - Windows 11 では WinGet は標準でインストール済みなので作業は不要
+- WSL をインストールする
+    1. **スタートメニュー** の **アプリ,設定,ドキュメントの検索** に `wt` と入力
+
+        ![スタートメニュー](start-menu1-mini2.png)
+    2. `管理者として実行(A)` をクリック
+
+        ![スタートメニュー](start-menu2-mini2.png)
+    3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
+    4. 開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
+        ```
+        wsl --install --no-distribution
+        ```
 
 ## 3.2 Mac : Homebrew
 
@@ -82,10 +104,18 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
   brew install --cask visual-studio-code
   ```
 
-## 4.3 日本語化
-VSCode インストール後、[この記事](https://www.atmarkit.co.jp/ait/articles/1805/18/news032.html)を参考に表示言語を日本語にしておくと便利かもしれない。
-英語表示のまま使っても何も問題はない
+## 4.3 拡張機能のインストール
 
+この後インストールする Docker 用拡張と、日本語化拡張をインストールする。
+
+1. ターミナルを再起動
+   VS Code インストール時の PATH の更新を確実に反映させるため。
+
+1. 以下を実行
+    ```
+    code  --install-extension ms-vscode-remote.vscode-remote-extensionpack
+    code  --install-extension MS-CEINTL.vscode-language-pack-ja
+    ```
 
 # 5. Git
 
@@ -138,6 +168,7 @@ Git や GitHub を操作するための GUI として GitHub Desktop を使う�
 # 8. Docker Desktop
 
 Docker Desktop はコンテナ実行環境である。
+インストール後に再起動が必要になるかも。
 
 ## 8.1 Windows の場合
 
