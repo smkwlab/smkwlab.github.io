@@ -11,7 +11,7 @@ winget install -e --id GitHub.GitHubDesktop --accept-package-agreements --accept
 wsl --status >nul 2>&1
 if errorlevel 1 (
     echo ERROR: WSL が有効化されていません。
-    echo 管理者権限の PowerShell で wsl --install --no-distribution を実行し、
+    echo pcenv-setup-wsl.bat を管理者として実行し、
     echo PC を再起動してから本バッチを再度実行してください。
     pause
     exit /b 1

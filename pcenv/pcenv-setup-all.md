@@ -12,20 +12,13 @@ github:
 ## 1.1 Windows の場合
 
 - WSL をインストールする
-    1. **スタートメニュー** の **アプリ,設定,ドキュメントの検索** に `wt` と入力
-
-        ![スタートメニュー](start-menu1-mini2.png)
-    2. `管理者として実行(A)` をクリック
-
-        ![スタートメニュー](start-menu2-mini2.png)
+    1. [pcenv-setup-wsl.bat](pcenv-setup-wsl.bat) をダウンロード
+    2. ダウンロードした `pcenv-setup-wsl.bat` を右クリックし、`管理者として実行` を選択
     3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
-    4. 開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
-        ```
-        wsl --install --no-distribution
-        ```
+    4. インストール完了後、PC を再起動
 - 残りのソフトをインストール
     1. [pcenv-setup-all.bat](pcenv-setup-all.bat) をダウンロード
-    2. ダウンロードした `pcenv-setup-all.bat` をダブルクリックして実行（うまく実行できない場合は、右クリックから「管理者として実行」を選択）
+    2. ダウンロードした `pcenv-setup-all.bat` を右クリックし、`管理者として実行` を選択
 
 ## 1.2 Mac の場合
 
