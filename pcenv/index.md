@@ -32,8 +32,8 @@ github:
   - Homebrew (Mac の場合)
 - WSL (Windows の場合のみ)
 - Git
+- GitHub（アカウント作成）
 - GitHub Desktop
-  - これに先立って GitHub のアカウント作成についても説明する
 - Docker Desktop
 - Visual Studio Code
 
@@ -195,7 +195,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 - Docker 拡張
 - 日本語化拡張
 
-9.1 で起動した Terminal で以下を実行する。
+9.1 で起動した Windows Terminal / ターミナル で以下を実行する。
 
 ```
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
