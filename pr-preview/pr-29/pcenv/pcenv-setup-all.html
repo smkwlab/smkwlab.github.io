@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境一括セットアップ","headline":"一括インストール","url":"/pr-preview/pr-29/pcenv/pcenv-setup-all.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=8bf79acc9b808af1fb14013b6e33af33fa1cd2d1">
+    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=0ef6bc260e2340f5c38ab51d116249c202519c28">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/pr-preview/pr-29/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -55,38 +55,43 @@
 <h2 id="11-windows-の場合">1.1 Windows の場合</h2>
 
 <ul>
-  <li>wsl をインストール</li>
+  <li>WSL をインストールする
+    <ol>
+      <li>
+        <p><strong>スタートメニュー</strong> の <strong>アプリ,設定,ドキュメントの検索</strong> に <code class="language-plaintext highlighter-rouge">wt</code> と入力</p>
+
+        <p><img src="/pr-preview/pr-29/pcenv/start-menu1-mini2.png" alt="スタートメニュー" /></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">管理者として実行(A)</code> をクリック</p>
+
+        <p><img src="/pr-preview/pr-29/pcenv/start-menu2-mini2.png" alt="スタートメニュー" /></p>
+      </li>
+      <li><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</li>
+      <li>開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install --no-distribution
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>残りのソフトをインストール
+    <ol>
+      <li><a href="/pr-preview/pr-29/pcenv/pcenv-setup-all.bat">pcenv-setup-all.bat</a> をダウンロード</li>
+      <li>ダウンロードした <code class="language-plaintext highlighter-rouge">pcenv-setup-all.bat</code> をダブルクリックして実行（うまく実行できない場合は、右クリックから「管理者として実行」を選択）</li>
+    </ol>
+  </li>
 </ul>
-
-<ol>
-  <li>
-    <p><strong>スタートメニュー</strong> の <strong>アプリ,設定,ドキュメントの検索</strong> に <code class="language-plaintext highlighter-rouge">wt</code> と入力</p>
-
-    <p><img src="/pr-preview/pr-29/pcenv/start-menu1-mini2.png" alt="スタートメニュー" /></p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">管理者として実行(A)</code> をクリック</p>
-
-    <p><img src="/pr-preview/pr-29/pcenv/start-menu2-mini2.png" alt="スタートメニュー" /></p>
-  </li>
-  <li>
-    <p><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</p>
-  </li>
-</ol>
-
-<ul>
-  <li>開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl --install --no-distribution
-</code></pre></div>    </div>
-  </li>
-  <li>残りをインストール</li>
-</ul>
-
-<p><a href="/pr-preview/pr-29/pcenv/pcenv-setup-all.bat">pcenv-setup-all.bat</a> をダウンロードして実行。</p>
 
 <h2 id="12-mac-の場合">1.2 Mac の場合</h2>
 
-<p><a href="/pr-preview/pr-29/pcenv/pcenv-setup-all.sh">pcenv-setup-all.sh</a> をダウンロードして実行。</p>
+<ol>
+  <li><a href="/pr-preview/pr-29/pcenv/pcenv-setup-all.sh">pcenv-setup-all.sh</a> をダウンロード</li>
+  <li><code class="language-plaintext highlighter-rouge">ターミナル</code> を開き、ダウンロードした場所に移動</li>
+  <li>以下のコマンドを実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bash pcenv-setup-all.sh
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 
       </section>
