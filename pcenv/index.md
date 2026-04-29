@@ -55,7 +55,7 @@ Windows では  *WinGet* , Mac では *Homebrew* というパッケージ管理�
     ![homebrew](homebrew-install.png)
 1. ターミナル上に貼り付ける
     - ウィンドウ上で **`Command-v Enter`** を入力
-    - この後 **Password:** と表示されたら、mac のログインパスワードを入力
+    - この後 **Password:** と表示されたら、Mac のログインパスワードを入力
     - Press **Return/Enter** to continue or any other key to abort: と表示されたら `Enter` キーを叩く
 1. Homebrew のインストールが終了するので、以下を実行し、Homebrew を有効化する
     ```
