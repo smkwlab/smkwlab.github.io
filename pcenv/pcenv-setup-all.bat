@@ -20,7 +20,7 @@ if errorlevel 1 (
     exit /b 1
 )
 echo Install Ubuntu distribution for WSL
-winget install -e --id Canonical.Ubuntu --accept-package-agreements --accept-source-agreements
+wsl --install -d Ubuntu
 if errorlevel 1 goto :error
 
 set "CODE=%LOCALAPPDATA%\Programs\Microsoft VS Code\bin\code.cmd"

@@ -13,12 +13,12 @@ github:
 
 1. WSL をインストールする
     1. [pcenv-setup-wsl.bat](pcenv-setup-wsl.bat) をダウンロード
-    2. ダウンロードした**pcenv-setup-wsl.bat**を右クリックし`管理者として実行`を選択
+    2. ダウンロードした **pcenv-setup-wsl.bat** を右クリックし、`管理者として実行` を選択
     3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
     4. インストール完了後、PC を再起動
 2. 残りのソフトをインストール
     1. [pcenv-setup-all.bat](pcenv-setup-all.bat) をダウンロード
-    2. ダウンロードした**pcenv-setup-all.bat**を右クリックし`管理者として実行`を選択
+    2. ダウンロードした **pcenv-setup-all.bat** を右クリックし、`管理者として実行` を選択
 
 ## 1.2 Mac の場合
 
