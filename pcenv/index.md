@@ -110,9 +110,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 手順:
 
-1. `code` コマンドが PATH 上から使えるようにする
-    - Windows の場合: ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）
-    - Mac の場合: VS Code を起動し、コマンドパレット (`Cmd+Shift+P`) で `Shell Command: Install 'code' command in PATH` を実行 → ターミナルを再起動
+1. ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）
 2. 以下を実行
     ```
     code --install-extension ms-vscode-remote.vscode-remote-extensionpack
