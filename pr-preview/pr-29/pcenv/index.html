@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pr-preview/pr-29/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=0ef6bc260e2340f5c38ab51d116249c202519c28">
+    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=760d94b071b23b16b9a9512d6b21c1ef4cc0c855">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/pr-preview/pr-29/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -110,21 +110,10 @@ Mac では特別な追加ソフトは不要。</p>
   <li>Windows 11 では WinGet は標準でインストール済みなので作業は不要</li>
   <li>WSL をインストールする
     <ol>
-      <li>
-        <p><strong>スタートメニュー</strong> の <strong>アプリ,設定,ドキュメントの検索</strong> に <code class="language-plaintext highlighter-rouge">wt</code> と入力</p>
-
-        <p><img src="/pr-preview/pr-29/pcenv/start-menu1-mini2.png" alt="スタートメニュー" /></p>
-      </li>
-      <li>
-        <p><code class="language-plaintext highlighter-rouge">管理者として実行(A)</code> をクリック</p>
-
-        <p><img src="/pr-preview/pr-29/pcenv/start-menu2-mini2.png" alt="スタートメニュー" /></p>
-      </li>
+      <li><a href="/pr-preview/pr-29/pcenv/pcenv-setup-wsl.bat">pcenv-setup-wsl.bat</a> をダウンロード</li>
+      <li>ダウンロードした <code class="language-plaintext highlighter-rouge">pcenv-setup-wsl.bat</code> を右クリックし、<code class="language-plaintext highlighter-rouge">管理者として実行</code> を選択</li>
       <li><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</li>
-      <li>開いたターミナルで以下を実行。なお、実行後 Windows の再起動が必要。
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install --no-distribution
-</code></pre></div>        </div>
-      </li>
+      <li>インストール完了後、PC を再起動</li>
     </ol>
   </li>
 </ul>
