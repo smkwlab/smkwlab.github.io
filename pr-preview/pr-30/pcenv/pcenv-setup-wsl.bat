@@ -1,7 +1,7 @@
 @echo off
 
 :: Self-elevate to administrator if not already
-net session >nul 2>&1
+fsutil dirty query %systemdrive% >nul 2>&1
 if errorlevel 1 (
     echo This batch requires administrator privileges.
     echo Click "Yes" on the UAC dialog.
