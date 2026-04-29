@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=7dd4614bd3ab1f7ef51173a961d45c81df0a26ea">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9c915af7e2e66871eced19d5b5a9281906467e2b">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -79,14 +79,11 @@
     </ul>
   </li>
   <li>WSL (Windows の場合のみ)</li>
-  <li>Visual Studio Code</li>
   <li>Git</li>
-  <li>GitHub Desktop
-    <ul>
-      <li>これに先立って GitHub のアカウント作成についても説明する</li>
-    </ul>
-  </li>
+  <li>GitHub（アカウント作成）</li>
+  <li>GitHub Desktop</li>
   <li>Docker Desktop</li>
+  <li>Visual Studio Code</li>
 </ul>
 
 <h1 id="3-パッケージ管理ソフトと仮想化環境">3. パッケージ管理ソフトと仮想化環境</h1>
@@ -128,20 +125,12 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ol>
 
-<p>WSL は以下の手順でインストールする。</p>
+<p>WSL を有効化する。管理者として起動した Windows Terminal で以下を実行する。</p>
 
-<ol>
-  <li>管理者として起動した Windows Terminal で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install --no-distribution
-</code></pre></div>    </div>
-  </li>
-  <li>インストール後、PC を再起動する。再起動後、以降の作業のために改めて管理者として Windows Terminal を起動する。</li>
-  <li>Ubuntu ディストリビューションをインストールする。管理者として起動した Windows Terminal で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install -d Ubuntu
-</code></pre></div>    </div>
-  </li>
-  <li>インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。</li>
-</ol>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl --install --no-distribution
+</code></pre></div></div>
+
+<p>WSL を完全に有効化するには PC の再起動が必要だが、後の Docker Desktop インストール後にも再起動が必要となるため、ここでは再起動せず、4-8 章を続けて実行する。すべてのインストールが終わってから 9 章で一度だけ再起動する。</p>
 
 <h2 id="32-mac--homebrew">3.2 Mac : Homebrew</h2>
 
@@ -169,53 +158,9 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ol>
 
-<h1 id="4-visual-studio-code">4. Visual Studio Code</h1>
-
-<p>Visual Studio Code(以下 VSCode) は汎用エディタである。</p>
+<h1 id="4-git">4. Git</h1>
 
 <h2 id="41-windows-の場合">4.1 Windows の場合</h2>
-
-<ul>
-  <li>管理者として起動した Windows Terminal で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Microsoft.VisualStudioCode --source winget
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="42-mac-の場合">4.2 Mac の場合</h2>
-
-<ul>
-  <li>ターミナル上で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask visual-studio-code
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="43-拡張機能のインストール">4.3 拡張機能のインストール</h2>
-
-<p>以下の拡張機能をインストールする。</p>
-
-<ul>
-  <li>リモート開発用拡張パック (Dev Containers / WSL / SSH)</li>
-  <li>Docker 拡張</li>
-  <li>日本語化拡張</li>
-</ul>
-
-<p>手順:</p>
-
-<ol>
-  <li>ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）</li>
-  <li>以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> code --install-extension ms-vscode-remote.vscode-remote-extensionpack
- code --install-extension ms-azuretools.vscode-docker
- code --install-extension MS-CEINTL.vscode-language-pack-ja
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h1 id="5-git">5. Git</h1>
-
-<h2 id="51-windows-の場合">5.1 Windows の場合</h2>
 
 <ul>
   <li>管理者として起動した Windows Terminal で以下を実行
@@ -224,7 +169,7 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ul>
 
-<h2 id="52-mac-の場合">5.2 Mac の場合</h2>
+<h2 id="42-mac-の場合">4.2 Mac の場合</h2>
 
 <ul>
   <li>Mac は標準でも Git がインストールされているが、バージョンが古い。 そこで Homebrew を使い最新版の Git をインストールする。</li>
@@ -234,9 +179,9 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ul>
 
-<h1 id="6-github">6. GitHub</h1>
+<h1 id="5-github">5. GitHub</h1>
 
-<p>Git では中央リポジトを利用する。
+<p>Git では中央リポジトリを利用する。
 下川研では中央リポジトリとして GitHub.com のサービスを利用する。
 そこで <a href="/pcenv/github-account.pdf">このドキュメント</a>に従って GitHub のアカウントを登録する</p>
 
@@ -246,12 +191,12 @@ Mac では特別な追加ソフトは不要。</p>
 この登録作業は下川にしか出来ないので、登録した GitHub アカウントを、下川まで連絡する。
 -->
 
-<h1 id="7-github-desktop">7. GitHub Desktop</h1>
+<h1 id="6-github-desktop">6. GitHub Desktop</h1>
 
 <p>Git や GitHub を操作するための GUI として GitHub Desktop を使う。
 本来はコマンドラインの使い方を覚えてほしいが、まずは使えるようになることが先決。</p>
 
-<h2 id="71-windows-の場合">7.1 Windows の場合</h2>
+<h2 id="61-windows-の場合">6.1 Windows の場合</h2>
 
 <ul>
   <li>管理者として起動した Windows Terminal で以下を実行
@@ -260,7 +205,7 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ul>
 
-<h2 id="72-mac-の場合">7.2 Mac の場合</h2>
+<h2 id="62-mac-の場合">6.2 Mac の場合</h2>
 
 <ul>
   <li>ターミナル上で以下を実行
@@ -269,12 +214,11 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ul>
 
-<h1 id="8-docker-desktop">8. Docker Desktop</h1>
+<h1 id="7-docker-desktop">7. Docker Desktop</h1>
 
-<p>Docker Desktop はコンテナ実行環境である。
-インストール後に再起動が必要になるかも。</p>
+<p>Docker Desktop はコンテナ実行環境である。</p>
 
-<h2 id="81-windows-の場合">8.1 Windows の場合</h2>
+<h2 id="71-windows-の場合">7.1 Windows の場合</h2>
 
 <ul>
   <li>管理者として起動した Windows Terminal で以下を実行
@@ -283,7 +227,7 @@ Mac では特別な追加ソフトは不要。</p>
   </li>
 </ul>
 
-<h2 id="82-mac-の場合">8.2 Mac の場合</h2>
+<h2 id="72-mac-の場合">7.2 Mac の場合</h2>
 
 <ul>
   <li>ターミナル上で以下を実行
@@ -291,6 +235,68 @@ Mac では特別な追加ソフトは不要。</p>
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h1 id="8-visual-studio-code">8. Visual Studio Code</h1>
+
+<p>Visual Studio Code(以下 VSCode) は汎用エディタである。</p>
+
+<h2 id="81-windows-の場合">8.1 Windows の場合</h2>
+
+<ul>
+  <li>管理者として起動した Windows Terminal で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Microsoft.VisualStudioCode --source winget
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="82-mac-の場合">8.2 Mac の場合</h2>
+
+<ul>
+  <li>ターミナル上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask visual-studio-code
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="9-再起動と最終セットアップ">9. 再起動と最終セットアップ</h1>
+
+<p>3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、最後に VS Code の拡張機能をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップする。</p>
+
+<h2 id="91-再起動">9.1 再起動</h2>
+
+<ul>
+  <li>Windows の場合: <strong>PC を再起動</strong> する。再起動後、改めて<strong>管理者として Windows Terminal を起動</strong>する。</li>
+  <li>Mac の場合: <strong>新しいターミナル</strong> を開く（新しいタブまたはウィンドウで OK）。</li>
+</ul>
+
+<h2 id="92-vs-code-拡張機能のインストール">9.2 VS Code 拡張機能のインストール</h2>
+
+<p>以下の拡張機能をインストールする。</p>
+
+<ul>
+  <li>リモート開発用拡張パック (Dev Containers / WSL / SSH)</li>
+  <li>Docker 拡張</li>
+  <li>日本語化拡張</li>
+</ul>
+
+<p>9.1 で起動した Windows Terminal / ターミナル で以下を実行する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension MS-CEINTL.vscode-language-pack-ja
+</code></pre></div></div>
+
+<h2 id="93-ubuntu-のインストールwindows-のみ">9.3 Ubuntu のインストール（Windows のみ）</h2>
+
+<p>WSL に Ubuntu ディストリビューションをインストールする。</p>
+
+<ol>
+  <li>管理者として起動した Windows Terminal で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install -d Ubuntu
+</code></pre></div>    </div>
+  </li>
+  <li>インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。</li>
+</ol>
 
 
       </section>
