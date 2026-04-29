@@ -75,6 +75,11 @@ WSL は以下の手順でインストールする。
     wsl --install --no-distribution
     ```
 2. インストール後、PC を再起動する。再起動後、以降の作業のために改めて管理者として Windows Terminal を起動する。
+3. Ubuntu ディストリビューションをインストールする。管理者として起動した Windows Terminal で以下を実行
+    ```
+    wsl --install -d Ubuntu
+    ```
+4. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
 
 ## 3.2 Mac : Homebrew
 
