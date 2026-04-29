@@ -184,7 +184,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 ## 9.1 再起動
 
-- Windows の場合: **PC を再起動** する。再起動後、改めて管理者として Windows Terminal を起動する。
+- Windows の場合: **PC を再起動** する。再起動後、改めて**管理者として Windows Terminal を起動**する。
 - Mac の場合: **新しいターミナル** を開く（新しいタブまたはウィンドウで OK）。
 
 ## 9.2 VS Code 拡張機能のインストール
