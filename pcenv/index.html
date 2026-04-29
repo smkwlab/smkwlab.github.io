@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=a7f0fa2a6db74f60e4e584ca9400d9161cbd1f35">
+    <link rel="stylesheet" href="/assets/css/style.css?v=16518e7d5a763ef8915e547b96d06d765fbb76a2">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -109,13 +109,33 @@ Mac では特別な追加ソフトは不要。</p>
 
 <p>Windows 11 では WinGet は標準でインストール済みなので作業は不要。</p>
 
+<p>以降の Windows でのインストール作業は、すべて <strong>管理者として起動した Windows Terminal</strong> で行う。
+次の手順で起動する。</p>
+
+<ol>
+  <li>
+    <p><strong>スタートメニュー</strong> の <strong>アプリ、設定、ドキュメントの検索</strong> に <code class="language-plaintext highlighter-rouge">wt</code> と入力</p>
+
+    <p><img src="/pcenv/start-menu1-mini2.png" alt="スタートメニューで wt を検索" /></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">管理者として実行(A)</code> をクリック</p>
+
+    <p><img src="/pcenv/start-menu2-mini2.png" alt="管理者として実行を選択" /></p>
+  </li>
+  <li>
+    <p><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</p>
+  </li>
+</ol>
+
 <p>WSL は以下の手順でインストールする。</p>
 
 <ol>
-  <li><a href="/pcenv/pcenv-setup-wsl.bat">pcenv-setup-wsl.bat</a> をダウンロード</li>
-  <li>ダウンロードした <code class="language-plaintext highlighter-rouge">pcenv-setup-wsl.bat</code> をダブルクリックして実行</li>
-  <li><strong>このアプリがデバイスに変更を加えることを許可しますか？</strong> というダイアログに対しては <code class="language-plaintext highlighter-rouge">はい</code> をクリック</li>
-  <li>メッセージで再起動が指示された場合は、PC を再起動</li>
+  <li>管理者として起動した Windows Terminal で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install --no-distribution
+</code></pre></div>    </div>
+  </li>
+  <li>再起動を求められた場合は PC を再起動。再起動後、改めて管理者として Windows Terminal を起動する。</li>
 </ol>
 
 <h2 id="32-mac--homebrew">3.2 Mac : Homebrew</h2>
@@ -151,7 +171,7 @@ Mac では特別な追加ソフトは不要。</p>
 <h2 id="41-windows-の場合">4.1 Windows の場合</h2>
 
 <ul>
-  <li>PowerShell 上で以下を実行
+  <li>管理者として起動した Windows Terminal で以下を実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Microsoft.VisualStudioCode --source winget
 </code></pre></div>    </div>
   </li>
@@ -193,7 +213,7 @@ Mac では特別な追加ソフトは不要。</p>
 <h2 id="51-windows-の場合">5.1 Windows の場合</h2>
 
 <ul>
-  <li>PowerShell 上で以下を実行
+  <li>管理者として起動した Windows Terminal で以下を実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
 </code></pre></div>    </div>
   </li>
@@ -229,7 +249,7 @@ Mac では特別な追加ソフトは不要。</p>
 <h2 id="71-windows-の場合">7.1 Windows の場合</h2>
 
 <ul>
-  <li>PowerShell 上で以下を実行
+  <li>管理者として起動した Windows Terminal で以下を実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id GitHub.GitHubDesktop
 </code></pre></div>    </div>
   </li>
@@ -252,7 +272,7 @@ Mac では特別な追加ソフトは不要。</p>
 <h2 id="81-windows-の場合">8.1 Windows の場合</h2>
 
 <ul>
-  <li>PowerShell 上で以下を実行
+  <li>管理者として起動した Windows Terminal で以下を実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Docker.DockerDesktop --source winget
 </code></pre></div>    </div>
   </li>
