@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 echo "Install Visual Studio Code"
 winget install -e --id Microsoft.VisualStudioCode --source winget --accept-package-agreements --accept-source-agreements
 

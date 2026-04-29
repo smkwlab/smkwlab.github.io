@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 wsl --install --no-distribution
 echo.
 echo ======================================================
