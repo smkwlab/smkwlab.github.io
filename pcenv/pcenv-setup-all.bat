@@ -1,4 +1,36 @@
 @echo off
+
+:: Self-elevate to administrator if not already
+net session >nul 2>&1
+if errorlevel 1 (
+    echo This batch requires administrator privileges.
+    echo Click "Yes" on the UAC dialog.
+    powershell -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+    exit /b
+)
+
+cd /d "%~dp0"
+
+:: Enable WSL if not already functional
+wsl --status >nul 2>&1
+if errorlevel 1 (
+    echo Enable WSL
+    wsl --install --no-distribution
+    if errorlevel 1 goto :error
+
+    :: After install, check again. If still not functional, reboot is required.
+    wsl --status >nul 2>&1
+    if errorlevel 1 (
+        echo.
+        echo ======================================================
+        echo  WSL has been enabled. Restart your PC,
+        echo  then run this batch again.
+        echo ======================================================
+        pause
+        exit /b 0
+    )
+)
+
 echo Install Visual Studio Code
 winget install -e --id Microsoft.VisualStudioCode --source winget --accept-package-agreements --accept-source-agreements
 if errorlevel 1 goto :error
@@ -11,14 +43,6 @@ echo Install GitHub Desktop
 winget install -e --id GitHub.GitHubDesktop --accept-package-agreements --accept-source-agreements
 if errorlevel 1 goto :error
 
-wsl --status >nul 2>&1
-if errorlevel 1 (
-    echo ERROR: WSL is not enabled.
-    echo Run pcenv-setup-wsl.bat as administrator,
-    echo then restart your PC and run this batch again.
-    pause
-    exit /b 1
-)
 echo Install Ubuntu distribution for WSL
 wsl --install -d Ubuntu
 if errorlevel 1 goto :error
