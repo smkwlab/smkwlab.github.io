@@ -74,7 +74,7 @@ WSL は以下の手順でインストールする。
     ```
     wsl --install --no-distribution
     ```
-2. 再起動を求められた場合は PC を再起動。再起動後、改めて管理者として Windows Terminal を起動する。
+2. インストール後、PC を再起動する。再起動後、以降の作業のために改めて管理者として Windows Terminal を起動する。
 
 ## 3.2 Mac : Homebrew
 
