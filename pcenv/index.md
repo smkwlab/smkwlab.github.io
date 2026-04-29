@@ -60,7 +60,7 @@ Windows 11 では WinGet は標準でインストール済みなので作業は�
 以降の Windows でのインストール作業は、すべて **管理者として起動した Windows Terminal** で行う。
 次の手順で起動する。
 
-1. **スタートメニュー** の **アプリ,設定,ドキュメントの検索** に `wt` と入力
+1. **スタートメニュー** の **アプリ、設定、ドキュメントの検索** に `wt` と入力
 
     ![スタートメニュー](start-menu1-mini2.png)
 2. `管理者として実行(A)` をクリック
@@ -70,11 +70,11 @@ Windows 11 では WinGet は標準でインストール済みなので作業は�
 
 WSL は以下の手順でインストールする。
 
-1. 管理者 Windows Terminal で以下を実行
+1. 管理者として起動した Windows Terminal で以下を実行
     ```
     wsl --install --no-distribution
     ```
-2. 再起動を求められた場合は PC を再起動。再起動後、改めて管理者 Windows Terminal を起動する。
+2. 再起動を求められた場合は PC を再起動。再起動後、改めて管理者として Windows Terminal を起動する。
 
 ## 3.2 Mac : Homebrew
 
@@ -100,7 +100,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 ## 4.1 Windows の場合
 
-- 管理者 Windows Terminal で以下を実行
+- 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install -e --id Microsoft.VisualStudioCode --source winget
   ```
@@ -134,7 +134,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 ## 5.1 Windows の場合
 
-- 管理者 Windows Terminal で以下を実行
+- 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
   ```
@@ -166,7 +166,7 @@ Git や GitHub を操作するための GUI として GitHub Desktop を使う�
 
 ## 7.1 Windows の場合
 
-- 管理者 Windows Terminal で以下を実行
+- 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install -e --id GitHub.GitHubDesktop
   ```
@@ -185,7 +185,7 @@ Docker Desktop はコンテナ実行環境である。
 
 ## 8.1 Windows の場合
 
-- 管理者 Windows Terminal で以下を実行
+- 管理者として起動した Windows Terminal で以下を実行
   ```
   winget install -e --id Docker.DockerDesktop --source winget
   ```
