@@ -30,6 +30,7 @@ github:
 - パッケージ管理ソフト
   - WinGet (Windows の場合)
   - Homebrew (Mac の場合)
+- WSL (Windows の場合のみ)
 - Visual Studio Code
 - Git
 - GitHub Desktop
@@ -101,14 +102,21 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 ## 4.3 拡張機能のインストール
 
-この後インストールする Docker 用拡張と、日本語化拡張をインストールする。
+以下の拡張機能をインストールする。
 
-1. ターミナルを再起動
-   VS Code インストール時の PATH の更新を確実に反映させるため。
+- リモート開発用拡張パック (Dev Containers / WSL / SSH)
+- Docker 拡張
+- 日本語化拡張
 
-1. 以下を実行
+手順:
+
+1. `code` コマンドが PATH 上から使えるようにする
+    - Windows の場合: ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）
+    - Mac の場合: VS Code を起動し、コマンドパレット (`Cmd+Shift+P`) で `Shell Command: Install 'code' command in PATH` を実行 → ターミナルを再起動
+2. 以下を実行
     ```
     code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+    code --install-extension ms-azuretools.vscode-docker
     code --install-extension MS-CEINTL.vscode-language-pack-ja
     ```
 

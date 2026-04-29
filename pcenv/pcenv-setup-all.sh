@@ -43,6 +43,7 @@ if [[ ! -x "$CODE" ]]; then
     exit 1
 fi
 "$CODE" --install-extension ms-vscode-remote.vscode-remote-extensionpack
+"$CODE" --install-extension ms-azuretools.vscode-docker
 "$CODE" --install-extension MS-CEINTL.vscode-language-pack-ja
 
 echo "Install Docker Desktop"
