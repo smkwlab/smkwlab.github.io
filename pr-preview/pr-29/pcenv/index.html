@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pr-preview/pr-29/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=a3f3511ba80ff2c164dd151bcc06a376ea3d1e86">
+    <link rel="stylesheet" href="/pr-preview/pr-29/assets/css/style.css?v=879d611f8ecbf9b9d2b4bde2bf8d4fb7955e24d2">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/pr-preview/pr-29/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -78,6 +78,7 @@
       <li>Homebrew (Mac の場合)</li>
     </ul>
   </li>
+  <li>WSL (Windows の場合のみ)</li>
   <li>Visual Studio Code</li>
   <li>Git</li>
   <li>GitHub Desktop
@@ -167,16 +168,26 @@ Mac では特別な追加ソフトは不要。</p>
 
 <h2 id="43-拡張機能のインストール">4.3 拡張機能のインストール</h2>
 
-<p>この後インストールする Docker 用拡張と、日本語化拡張をインストールする。</p>
+<p>以下の拡張機能をインストールする。</p>
+
+<ul>
+  <li>リモート開発用拡張パック (Dev Containers / WSL / SSH)</li>
+  <li>Docker 拡張</li>
+  <li>日本語化拡張</li>
+</ul>
+
+<p>手順:</p>
 
 <ol>
-  <li>
-    <p>ターミナルを再起動
-VS Code インストール時の PATH の更新を確実に反映させるため。</p>
+  <li><code class="language-plaintext highlighter-rouge">code</code> コマンドが PATH 上から使えるようにする
+    <ul>
+      <li>Windows の場合: ターミナルを再起動（VS Code インストール時の PATH 更新を反映するため）</li>
+      <li>Mac の場合: VS Code を起動し、コマンドパレット (<code class="language-plaintext highlighter-rouge">Cmd+Shift+P</code>) で <code class="language-plaintext highlighter-rouge">Shell Command: Install 'code' command in PATH</code> を実行 → ターミナルを再起動</li>
+    </ul>
   </li>
-  <li>
-    <p>以下を実行</p>
+  <li>以下を実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+ code --install-extension ms-azuretools.vscode-docker
  code --install-extension MS-CEINTL.vscode-language-pack-ja
 </code></pre></div>    </div>
   </li>
