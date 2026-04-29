@@ -1,5 +1,4 @@
 @echo off
-chcp 65001 >nul
 echo "Install Visual Studio Code"
 winget install -e --id Microsoft.VisualStudioCode --source winget --accept-package-agreements --accept-source-agreements
 
@@ -11,9 +10,9 @@ winget install -e --id GitHub.GitHubDesktop --accept-package-agreements --accept
 
 wsl --status >nul 2>&1
 if errorlevel 1 (
-    echo ERROR: WSL が有効化されていません。
-    echo pcenv-setup-wsl.bat を管理者として実行し、
-    echo PC を再起動してから本バッチを再度実行してください。
+    echo ERROR: WSL is not enabled.
+    echo Run pcenv-setup-wsl.bat as administrator,
+    echo then restart your PC and run this batch again.
     pause
     exit /b 1
 )
@@ -25,7 +24,7 @@ if not exist "%CODE%" set "CODE=%ProgramFiles%\Microsoft VS Code\bin\code.cmd"
 echo "Install VS Code extensions"
 if not exist "%CODE%" (
     echo ERROR: code.cmd not found at %CODE%
-    echo VS Code のインストールが正しく完了していない可能性があります。
+    echo VS Code may not be installed properly.
     pause
     exit /b 1
 )
@@ -37,8 +36,8 @@ winget install -e --id Docker.DockerDesktop --source winget --accept-package-agr
 
 echo.
 echo ======================================================
-echo  セットアップが完了しました。
-echo  Docker Desktop を使用するには、サインアウト/サインイン
-echo  または PC の再起動が必要です。
+echo  Setup completed.
+echo  To use Docker Desktop, sign out and sign in,
+echo  or restart your PC.
 echo ======================================================
 pause

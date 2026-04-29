@@ -39,7 +39,7 @@ echo "Install VS Code extensions"
 CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 if [[ ! -x "$CODE" ]]; then
     echo "ERROR: code command not found at $CODE"
-    echo "VS Code のインストールが正しく完了していない可能性があります。"
+    echo "VS Code may not be installed properly."
     exit 1
 fi
 "$CODE" --install-extension ms-vscode-remote.vscode-remote-extensionpack
@@ -50,7 +50,7 @@ brew install --cask docker
 
 echo ""
 echo "======================================================"
-echo "  セットアップが完了しました。"
-echo "  Docker Desktop は初回起動時にライセンス同意と"
-echo "  権限付与（管理者パスワード入力）が必要です。"
+echo "  Setup completed."
+echo "  On first launch, Docker Desktop will request license"
+echo "  acceptance and your admin password."
 echo "======================================================"

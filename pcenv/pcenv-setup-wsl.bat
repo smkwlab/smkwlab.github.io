@@ -1,9 +1,8 @@
 @echo off
-chcp 65001 >nul
 wsl --install --no-distribution
 echo.
 echo ======================================================
-echo  WSL のインストールが完了しました。
-echo  PC を再起動してから pcenv-setup-all.bat を実行してください。
+echo  WSL installation completed.
+echo  Restart your PC, then run pcenv-setup-all.bat.
 echo ======================================================
 pause
