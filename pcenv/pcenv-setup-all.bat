@@ -1,7 +1,7 @@
 @echo off
 
 :: Self-elevate to administrator if not already
-net session >nul 2>&1
+fsutil dirty query %systemdrive% >nul 2>&1
 if errorlevel 1 (
     echo This batch requires administrator privileges.
     echo Click "Yes" on the UAC dialog.
@@ -16,7 +16,7 @@ wsl --status >nul 2>&1
 if errorlevel 1 (
     echo Enable WSL
     wsl --install --no-distribution
-    if errorlevel 1 goto :error
+    if errorlevel 1 goto :wsl_error
 
     :: After install, check again. If still not functional, reboot is required.
     wsl --status >nul 2>&1
@@ -75,6 +75,14 @@ echo  or restart your PC.
 echo ======================================================
 pause
 exit /b 0
+
+:wsl_error
+echo.
+echo ======================================================
+echo  ERROR: Failed to enable WSL. Aborting.
+echo ======================================================
+pause
+exit /b 1
 
 :error
 echo.
