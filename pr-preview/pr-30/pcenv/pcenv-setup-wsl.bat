@@ -5,7 +5,8 @@ fsutil dirty query %systemdrive% >nul 2>&1
 if errorlevel 1 (
     echo This batch requires administrator privileges.
     echo Click "Yes" on the UAC dialog.
-    powershell -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+    set "BAT_PATH=%~f0"
+    powershell -NoProfile -Command "Start-Process -FilePath $env:BAT_PATH -Verb RunAs"
     if errorlevel 1 (
         echo.
         echo ERROR: Failed to elevate to administrator.
