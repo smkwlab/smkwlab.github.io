@@ -26,31 +26,22 @@ if [[ -z "$BREW_BIN" ]]; then
 fi
 eval "$("$BREW_BIN" shellenv)"
 
-echo "Install Visual Studio Code"
-brew install --cask visual-studio-code
-
 echo "Install Git"
 brew install git
 
 echo "Install GitHub Desktop"
 brew install --cask github
 
-echo "Install VS Code extensions"
-CODE="$(command -v code || true)"
-if [[ -z "$CODE" ]]; then
-    CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-fi
-if [[ ! -x "$CODE" ]]; then
-    echo "ERROR: code command not found on PATH or at $CODE"
-    echo "VS Code may not be installed properly."
-    exit 1
-fi
-"$CODE" --install-extension ms-vscode-remote.vscode-remote-extensionpack
-"$CODE" --install-extension ms-azuretools.vscode-docker
-"$CODE" --install-extension MS-CEINTL.vscode-language-pack-ja
-
 echo "Install Docker Desktop"
 brew install --cask docker
+
+echo "Install Visual Studio Code"
+brew install --cask visual-studio-code
+
+echo "Install VS Code extensions"
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension MS-CEINTL.vscode-language-pack-ja
 
 echo ""
 echo "======================================================"

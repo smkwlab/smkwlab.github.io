@@ -11,10 +11,12 @@ github:
 
 ## 1.1 Windows の場合
 
-1. [pcenv-setup-all.bat](pcenv-setup-all.bat) をダウンロード
-2. ダウンロードした **pcenv-setup-all.bat** をダブルクリックして実行
-3. **このアプリがデバイスに変更を加えることを許可しますか？** というダイアログに対しては `はい` をクリック
-4. WSL が新たに有効化された場合は、画面の指示に従って PC を再起動し、再度 **pcenv-setup-all.bat** をダブルクリックして実行
+1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat) をダウンロード
+2. **pcenv-setup-stage1.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
+3. インストール完了のメッセージが表示されたら、PC を再起動
+4. 再起動後、[pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
+5. **pcenv-setup-stage2.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
+6. 完了メッセージが表示されたらインストール終了
 
 ## 1.2 Mac の場合
 
