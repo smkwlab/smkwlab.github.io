@@ -1,21 +1,8 @@
 @echo off
 
-:: Self-elevate to administrator if not already
-fsutil dirty query %systemdrive% >nul 2>&1
-if errorlevel 1 (
-    echo This batch requires administrator privileges.
-    echo Click "Yes" on the UAC dialog.
-    set "BAT_PATH=%~f0"
-    powershell -NoProfile -Command "try { Start-Process -FilePath $env:BAT_PATH -Verb RunAs -ErrorAction Stop } catch { exit 1 }"
-    if errorlevel 1 (
-        echo.
-        echo ERROR: Failed to elevate to administrator.
-        echo Cancel was clicked on the UAC dialog or PowerShell is unavailable.
-        pause
-        exit /b 1
-    )
-    exit /b
-)
+:: Both wsl --install -d Ubuntu (after WSL is already enabled) and
+:: VS Code extension installs are user-level operations, so this stage
+:: does not require administrator privileges.
 
 cd /d "%~dp0"
 
