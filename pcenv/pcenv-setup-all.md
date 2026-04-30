@@ -11,12 +11,11 @@ github:
 
 ## 1.1 Windows の場合
 
-1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat) をダウンロード
+1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat) と [pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
 2. **pcenv-setup-stage1.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
 3. インストール完了のメッセージが表示されたら、PC を再起動
-4. 再起動後、[pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
-5. **pcenv-setup-stage2.bat** をダブルクリックして実行
-6. 完了メッセージが表示されたらインストール終了
+4. 再起動後、**pcenv-setup-stage2.bat** をダブルクリックして実行
+5. 完了メッセージが表示されたらインストール終了
 
 ## 1.2 Mac の場合
 
