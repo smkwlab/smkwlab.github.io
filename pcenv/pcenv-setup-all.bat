@@ -19,29 +19,21 @@ if errorlevel 1 (
 
 cd /d "%~dp0"
 
-:: Enable WSL if not already functional
+:: Enable WSL if not already functional. Reboot is required after the
+:: kernel is installed; once enabled, re-run this batch to continue.
 wsl --status >nul 2>&1
 if errorlevel 1 (
     echo Enable WSL
     wsl --install --no-distribution
     if errorlevel 1 goto wsl_error
-
-    :: After install, check again. If still not functional, reboot is required.
-    wsl --status >nul 2>&1
-    if errorlevel 1 (
-        echo.
-        echo ======================================================
-        echo  WSL has been enabled. Restart your PC,
-        echo  then run this batch again.
-        echo ======================================================
-        pause
-        exit /b 0
-    )
+    echo.
+    echo ======================================================
+    echo  WSL has been enabled. Restart your PC,
+    echo  then run this batch again.
+    echo ======================================================
+    pause
+    exit /b 0
 )
-
-echo Install Visual Studio Code
-winget install -e --id Microsoft.VisualStudioCode --source winget --accept-package-agreements --accept-source-agreements
-if errorlevel 1 goto error
 
 echo Install Git with custom options for Visual Studio Code, External OpenSSH, and LF line endings
 winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly" --accept-package-agreements --accept-source-agreements
@@ -51,8 +43,12 @@ echo Install GitHub Desktop
 winget install -e --id GitHub.GitHubDesktop --accept-package-agreements --accept-source-agreements
 if errorlevel 1 goto error
 
-echo Install Ubuntu distribution for WSL
-wsl --install -d Ubuntu
+echo Install Docker Desktop
+winget install -e --id Docker.DockerDesktop --source winget --accept-package-agreements --accept-source-agreements
+if errorlevel 1 goto error
+
+echo Install Visual Studio Code
+winget install -e --id Microsoft.VisualStudioCode --source winget --accept-package-agreements --accept-source-agreements
 if errorlevel 1 goto error
 
 set "CODE=%LOCALAPPDATA%\Programs\Microsoft VS Code\bin\code.cmd"
@@ -71,8 +67,8 @@ if errorlevel 1 goto error
 "%CODE%" --install-extension MS-CEINTL.vscode-language-pack-ja
 if errorlevel 1 goto error
 
-echo Install Docker Desktop
-winget install -e --id Docker.DockerDesktop --source winget --accept-package-agreements --accept-source-agreements
+echo Install Ubuntu distribution for WSL
+wsl --install -d Ubuntu
 if errorlevel 1 goto error
 
 echo.

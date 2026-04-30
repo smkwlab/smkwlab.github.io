@@ -26,14 +26,17 @@ if [[ -z "$BREW_BIN" ]]; then
 fi
 eval "$("$BREW_BIN" shellenv)"
 
-echo "Install Visual Studio Code"
-brew install --cask visual-studio-code
-
 echo "Install Git"
 brew install git
 
 echo "Install GitHub Desktop"
 brew install --cask github
+
+echo "Install Docker Desktop"
+brew install --cask docker
+
+echo "Install Visual Studio Code"
+brew install --cask visual-studio-code
 
 echo "Install VS Code extensions"
 CODE="$(command -v code || true)"
@@ -48,9 +51,6 @@ fi
 "$CODE" --install-extension ms-vscode-remote.vscode-remote-extensionpack
 "$CODE" --install-extension ms-azuretools.vscode-docker
 "$CODE" --install-extension MS-CEINTL.vscode-language-pack-ja
-
-echo "Install Docker Desktop"
-brew install --cask docker
 
 echo ""
 echo "======================================================"
