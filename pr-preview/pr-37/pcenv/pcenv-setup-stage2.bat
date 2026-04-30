@@ -6,7 +6,7 @@ if errorlevel 1 (
     echo This batch requires administrator privileges.
     echo Click "Yes" on the UAC dialog.
     set "BAT_PATH=%~f0"
-    powershell -NoProfile -Command "Start-Process -FilePath $env:BAT_PATH -Verb RunAs"
+    powershell -NoProfile -Command "try { Start-Process -FilePath $env:BAT_PATH -Verb RunAs -ErrorAction Stop } catch { exit 1 }"
     if errorlevel 1 (
         echo.
         echo ERROR: Failed to elevate to administrator.
