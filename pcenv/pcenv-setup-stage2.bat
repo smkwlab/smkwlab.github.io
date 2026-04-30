@@ -32,11 +32,11 @@ if errorlevel 1 (
     pause
     exit /b 1
 )
-code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+call code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 if errorlevel 1 goto error
-code --install-extension ms-azuretools.vscode-docker
+call code --install-extension ms-azuretools.vscode-docker
 if errorlevel 1 goto error
-code --install-extension MS-CEINTL.vscode-language-pack-ja
+call code --install-extension MS-CEINTL.vscode-language-pack-ja
 if errorlevel 1 goto error
 
 echo.
