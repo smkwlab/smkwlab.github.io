@@ -15,7 +15,7 @@ github:
 2. **pcenv-setup-stage1.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
 3. インストール完了のメッセージが表示されたら、PC を再起動
 4. 再起動後、[pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
-5. **pcenv-setup-stage2.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
+5. **pcenv-setup-stage2.bat** をダブルクリックして実行
 6. 完了メッセージが表示されたらインストール終了
 
 ## 1.2 Mac の場合
