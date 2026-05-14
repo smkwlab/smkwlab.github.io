@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=c207738259d7c4ea2b2e56f2486f4ccd9a1dcc01">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c8948b3614d93a7d9689e38eeed2c333b67152e5">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -164,7 +164,7 @@ Mac では特別な追加ソフトは不要。</p>
 
 <ul>
   <li>管理者として起動した Windows Terminal で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install --id Git.Git -e --source winget --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -225,6 +225,7 @@ Mac では特別な追加ソフトは不要。</p>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget install -e --id Docker.DockerDesktop --source winget
 </code></pre></div>    </div>
   </li>
+  <li>インストーラの画面で <strong>Use WSL 2 instead of Hyper-V (recommended)</strong> にチェックが入っていることを確認する。チェックが外れていたら入れてから次に進む。</li>
 </ul>
 
 <h2 id="72-mac-の場合">7.2 Mac の場合</h2>

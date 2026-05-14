@@ -39,6 +39,13 @@ winget install -e --id GitHub.GitHubDesktop --accept-package-agreements --accept
 if errorlevel 1 goto error
 
 echo Install Docker Desktop
+echo.
+echo ******************************************************
+echo  IMPORTANT: When the Docker Desktop installer opens,
+echo  make sure "Use WSL 2 instead of Hyper-V (recommended)"
+echo  is CHECKED. If it is not, check it before continuing.
+echo ******************************************************
+echo.
 winget install -e --id Docker.DockerDesktop --source winget --accept-package-agreements --accept-source-agreements
 if errorlevel 1 goto error
 
