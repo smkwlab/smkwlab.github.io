@@ -2,7 +2,11 @@
 
 :: Both VS Code extension installs and wsl --install -d Ubuntu (after
 :: WSL is already enabled) are user-level operations, so this stage
-:: does not require administrator privileges.
+:: does not require administrator privileges. The manual guide in
+:: pcenv/index.md happens to run these commands from the admin
+:: Windows Terminal that section 9 has already opened, but that is
+:: just continuity with the surrounding steps -- elevation is not
+:: required here.
 
 cd /d "%~dp0"
 
