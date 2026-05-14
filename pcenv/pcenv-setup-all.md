@@ -13,9 +13,10 @@ github:
 
 1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat) と [pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
 2. **pcenv-setup-stage1.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
-3. インストール完了のメッセージが表示されたら、PC を再起動
-4. 再起動後、**pcenv-setup-stage2.bat** をダブルクリックして実行
-5. 完了メッセージが表示されたらインストール終了
+3. 途中で Docker Desktop のインストーラが起動したら、**Use WSL 2 instead of Hyper-V (recommended)** にチェックが入っていることを確認する。チェックが外れていたら入れてから次に進む。
+4. インストール完了のメッセージが表示されたら、PC を再起動
+5. 再起動後、**pcenv-setup-stage2.bat** をダブルクリックして実行
+6. 完了メッセージが表示されたらインストール終了
 
 ## 1.2 Mac の場合
 
