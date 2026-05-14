@@ -100,7 +100,7 @@ WSL を完全に有効化するには PC の再起動が必要だが、後の Do
 
 - 管理者として起動した Windows Terminal で以下を実行
   ```
-  winget install --id Git.Git -e --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
+  winget install --id Git.Git -e --source winget --override "/VERYSILENT /NORESTART /NOCANCEL /SP- /o:EditorOption=VisualStudioCode /o:SSHOption=ExternalOpenSSH /o:CRLFOption=LFOnly"
   ```
 
 ## 4.2 Mac の場合
@@ -152,6 +152,7 @@ Docker Desktop はコンテナ実行環境である。
   ```
   winget install -e --id Docker.DockerDesktop --source winget
   ```
+- インストーラの画面で **Use WSL 2 instead of Hyper-V (recommended)** にチェックが入っていることを確認する。チェックが外れていたら入れてから次に進む。
 
 ## 7.2 Mac の場合
 
