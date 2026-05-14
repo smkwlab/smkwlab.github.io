@@ -34,6 +34,7 @@ pause
 
 echo Install Ubuntu distribution for WSL
 wsl --install -d Ubuntu
+if errorlevel 1 goto error
 exit /b 0
 
 :error
