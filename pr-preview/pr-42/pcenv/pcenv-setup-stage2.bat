@@ -3,10 +3,9 @@
 :: Both VS Code extension installs and wsl --install -d Ubuntu (after
 :: WSL is already enabled) are user-level operations, so this stage
 :: does not require administrator privileges. The manual guide in
-:: pcenv/index.md happens to run these commands from the admin
-:: Windows Terminal that section 9 has already opened, but that is
-:: just continuity with the surrounding steps -- elevation is not
-:: required here.
+:: pcenv/index.md happens to run these commands from an elevated
+:: Windows Terminal as continuity with the surrounding steps, but
+:: elevation is not required here.
 
 cd /d "%~dp0"
 
@@ -30,9 +29,12 @@ echo.
 echo ======================================================
 echo  VS Code extensions installed.
 echo.
-echo  Next, Ubuntu will be installed. After the installer
-echo  finishes, the Ubuntu window opens and asks you to set
-echo  a Linux user name and password. Follow the prompts.
+echo  Next, Ubuntu will be installed. This is the final
+echo  step. After the installer finishes, the Ubuntu window
+echo  opens and asks you to set a Linux user name and
+echo  password. Follow the prompts. Once you reach the
+echo  Ubuntu shell prompt, type "exit" or close the Ubuntu
+echo  window to finish.
 echo ======================================================
 pause
 
