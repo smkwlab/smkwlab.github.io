@@ -19,7 +19,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"下川研究室用開発環境","headline":"PC環境構築手順","url":"/pcenv/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=09fdef04e542c2f428013420210078eeb56886cf">
+    <link rel="stylesheet" href="/assets/css/style.css?v=0ba449d3972466eb38e62e66a2149022e2574666">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -289,9 +289,9 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension MS-CEINTL.vscode-language-pack-ja
 </code></pre></div></div>
 
-<h2 id="93-ubuntu-のインストールwindows-のみ">9.3 Ubuntu のインストール（Windows のみ）</h2>
+<h2 id="93-wsl-の更新と-ubuntu-のインストールwindows-のみ">9.3 WSL の更新と Ubuntu のインストール（Windows のみ）</h2>
 
-<p>WSL に Ubuntu ディストリビューションをインストールする。</p>
+<p>WSL を最新版に更新したうえで、Ubuntu ディストリビューションをインストールする。</p>
 
 <ol>
   <li>管理者として起動した Windows Terminal で以下を実行し、WSL を最新版に更新する
@@ -302,7 +302,7 @@ code --install-extension MS-CEINTL.vscode-language-pack-ja
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wsl --install -d Ubuntu
 </code></pre></div>    </div>
   </li>
-  <li>インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。</li>
+  <li>インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。設定が終わったら <code class="language-plaintext highlighter-rouge">exit</code> と入力するか、Ubuntu のウィンドウを閉じる。</li>
 </ol>
 
 
