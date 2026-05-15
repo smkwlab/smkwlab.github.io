@@ -53,7 +53,6 @@ if [[ -z "$CODE_BIN" ]]; then
 fi
 "$CODE_BIN" --install-extension ms-vscode-remote.vscode-remote-extensionpack
 "$CODE_BIN" --install-extension ms-azuretools.vscode-docker
-"$CODE_BIN" --install-extension MS-CEINTL.vscode-language-pack-ja
 
 echo ""
 echo "======================================================"
