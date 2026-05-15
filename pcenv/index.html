@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=7b9c3b242ef8c8125f0ca917b6a6a2dc95546099">
+    <link rel="stylesheet" href="/assets/css/style.css?v=bcfb5343b7f6142bc030023176f03a52799042b4">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -279,15 +279,25 @@ Mac では特別な追加ソフトは不要。</p>
 <ul>
   <li>リモート開発用拡張パック (Dev Containers / WSL / SSH)</li>
   <li>Docker 拡張</li>
-  <li>日本語化拡張</li>
 </ul>
 
 <p>9.1 で起動した Windows Terminal / ターミナル で以下を実行する。</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension ms-azuretools.vscode-docker
-code --install-extension MS-CEINTL.vscode-language-pack-ja
 </code></pre></div></div>
+
+<h3 id="921-日本語化拡張のインストール">9.2.1 日本語化拡張のインストール</h3>
+
+<p>日本語化拡張 (Japanese Language Pack) は、コマンドラインからインストールすると VS Code の表示言語が切り替わらないため、VS Code を起動して GUI 経由でインストールする。</p>
+
+<ol>
+  <li>VS Code を起動する（Windows Terminal / ターミナルで <code class="language-plaintext highlighter-rouge">code</code> と入力するか、アプリ一覧から起動）</li>
+  <li>左サイドバーの <strong>Extensions</strong> アイコン（四角が 4 つ並んだアイコン）をクリック</li>
+  <li>検索欄に <code class="language-plaintext highlighter-rouge">Japanese Language Pack</code> と入力</li>
+  <li><strong>Japanese Language Pack for Visual Studio Code</strong> を選択し、<strong>Install</strong> をクリック</li>
+  <li>インストール完了後、右下に表示される <strong>Change Display Language and Restart</strong> をクリックし、VS Code を再起動する</li>
+</ol>
 
 <h2 id="93-wsl-の更新と-ubuntu-のインストールwindows-のみ">9.3 WSL の更新と Ubuntu のインストール（Windows のみ）</h2>
 
