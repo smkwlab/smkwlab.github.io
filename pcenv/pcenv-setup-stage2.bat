@@ -38,6 +38,10 @@ echo  window to finish.
 echo ======================================================
 pause
 
+echo Update WSL to the latest version
+wsl --update
+if errorlevel 1 goto error
+
 echo Install Ubuntu distribution for WSL
 wsl --install -d Ubuntu
 if errorlevel 1 goto error
