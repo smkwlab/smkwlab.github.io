@@ -208,8 +208,12 @@ code --install-extension MS-CEINTL.vscode-language-pack-ja
 
 WSL に Ubuntu ディストリビューションをインストールする。
 
-1. 管理者として起動した Windows Terminal で以下を実行
+1. 管理者として起動した Windows Terminal で以下を実行し、WSL を最新版に更新する
+    ```
+    wsl --update
+    ```
+2. 続けて Ubuntu をインストールする
     ```
     wsl --install -d Ubuntu
     ```
-2. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
+3. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
