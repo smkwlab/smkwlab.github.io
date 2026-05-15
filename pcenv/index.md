@@ -197,15 +197,23 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 - リモート開発用拡張パック (Dev Containers / WSL / SSH)
 - Docker 拡張
-- 日本語化拡張
 
 9.1 で起動した Windows Terminal / ターミナル で以下を実行する。
 
 ```
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension ms-azuretools.vscode-docker
-code --install-extension MS-CEINTL.vscode-language-pack-ja
 ```
+
+### 9.2.1 日本語化拡張のインストール
+
+日本語化拡張 (Japanese Language Pack) は、コマンドラインからインストールすると VS Code の表示言語が切り替わらないため、VS Code を起動して GUI 経由でインストールする。
+
+1. VS Code を起動する（Windows Terminal / ターミナルで `code` と入力するか、アプリ一覧から起動）
+2. 左サイドバーの **Extensions** アイコン（四角が 4 つ並んだアイコン）をクリック
+3. 検索欄に `Japanese Language Pack` と入力
+4. **Japanese Language Pack for Visual Studio Code** を選択し、**Install** をクリック
+5. インストール完了後、右下に表示される **Change Display Language and Restart** をクリックし、VS Code を再起動する
 
 ## 9.3 WSL の更新と Ubuntu のインストール（Windows のみ）
 

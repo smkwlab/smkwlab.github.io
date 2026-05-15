@@ -27,3 +27,13 @@ github:
     ```
     bash pcenv-setup-all.sh
     ```
+
+## 1.3 仕上げ: VS Code の日本語化拡張をインストール
+
+Windows / Mac とも、上記スクリプト実行後に VS Code の日本語化拡張を GUI からインストールする。コマンドラインからインストールすると表示言語が切り替わらないため、この手順は手動で行う。
+
+1. VS Code を起動する（Windows Terminal / ターミナルで `code` と入力するか、アプリ一覧から起動）
+2. 左サイドバーの **Extensions** アイコン（四角が 4 つ並んだアイコン）をクリック
+3. 検索欄に `Japanese Language Pack` と入力
+4. **Japanese Language Pack for Visual Studio Code** を選択し、**Install** をクリック
+5. インストール完了後、右下に表示される **Change Display Language and Restart** をクリックし、VS Code を再起動する
