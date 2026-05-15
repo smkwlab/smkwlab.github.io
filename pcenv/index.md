@@ -207,9 +207,9 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension MS-CEINTL.vscode-language-pack-ja
 ```
 
-## 9.3 Ubuntu のインストール（Windows のみ）
+## 9.3 WSL の更新と Ubuntu のインストール（Windows のみ）
 
-WSL に Ubuntu ディストリビューションをインストールする。
+WSL を最新版に更新したうえで、Ubuntu ディストリビューションをインストールする。
 
 1. 管理者として起動した Windows Terminal で以下を実行し、WSL を最新版に更新する
     ```
@@ -219,4 +219,4 @@ WSL に Ubuntu ディストリビューションをインストールする。
     ```
     wsl --install -d Ubuntu
     ```
-3. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。
+3. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。設定が終わったら `exit` と入力するか、Ubuntu のウィンドウを閉じる。
