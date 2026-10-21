@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=bcfb5343b7f6142bc030023176f03a52799042b4">
+    <link rel="stylesheet" href="/assets/css/style.css?v=64ba66dc5aa8aab2d352e6c035c1271407a4ecc1">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -55,13 +55,23 @@
 <h2 id="11-windows-の場合">1.1 Windows の場合</h2>
 
 <ol>
-  <li><a href="/pcenv/pcenv-setup-stage1.bat">pcenv-setup-stage1.bat</a> と <a href="/pcenv/pcenv-setup-stage2.bat">pcenv-setup-stage2.bat</a> をダウンロード</li>
+  <li><a href="/pcenv/pcenv-setup-stage1.bat">pcenv-setup-stage1.bat</a>、<a href="/pcenv/pcenv-setup-stage2.bat">pcenv-setup-stage2.bat</a>、<a href="/pcenv/pcenv-setup-gh.sh">pcenv-setup-gh.sh</a> を<strong>同じディレクトリに</strong>ダウンロード</li>
   <li><strong>pcenv-setup-stage1.bat</strong> をダブルクリックして実行（UAC ダイアログで <code class="language-plaintext highlighter-rouge">はい</code> をクリック）</li>
   <li>途中で Docker Desktop のインストーラが起動したら、<strong>Use WSL 2 instead of Hyper-V (recommended)</strong> にチェックが入っていることを確認する。チェックが外れていたら入れてから次に進む。</li>
   <li>インストール完了のメッセージが表示されたら、PC を再起動</li>
   <li>再起動後、<strong>pcenv-setup-stage2.bat</strong> をダブルクリックして実行</li>
   <li>VS Code 拡張機能のインストール完了メッセージが表示されたら、何かキーを押す</li>
-  <li>Ubuntu のインストール後、Ubuntu のウィンドウが開き、Linux 用のユーザー名・パスワードを設定する画面になる。画面の指示に従って設定する。設定が終わったら <code class="language-plaintext highlighter-rouge">exit</code> と入力するか、Ubuntu のウィンドウを閉じる</li>
+  <li>
+    <p>Ubuntu のインストール後、Ubuntu のウィンドウが開き、Linux 用のユーザー名・パスワードを設定する画面になる。画面の指示に従って設定する。設定が終わったら <code class="language-plaintext highlighter-rouge">exit</code> と入力するか、Ubuntu のウィンドウを閉じる</p>
+  </li>
+  <li>続けて GitHub CLI が Ubuntu の中にインストールされる</li>
+</ol>
+
+<p><strong>この後に手作業が 2 つ残る。</strong> 片方は GUI 設定、もう片方はブラウザでの認証なので自動化していない。</p>
+
+<ol>
+  <li>Docker Desktop の WSL 統合を確認する（<a href="./#94-docker-desktop-の-wsl-統合を確認するwindows-のみ">9.4 章</a>）</li>
+  <li>Ubuntu を開き、<code class="language-plaintext highlighter-rouge">gh auth login</code> で認証する（<a href="./#953-認証">9.5.3 章</a>）</li>
 </ol>
 
 <h2 id="12-mac-の場合">1.2 Mac の場合</h2>
@@ -71,6 +81,10 @@
   <li><code class="language-plaintext highlighter-rouge">ターミナル</code> を開き、ダウンロードしたディレクトリに移動</li>
   <li>以下のコマンドを実行
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bash pcenv-setup-all.sh
+</code></pre></div>    </div>
+  </li>
+  <li>終了後、GitHub CLI の認証を済ませる
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gh auth login
 </code></pre></div>    </div>
   </li>
 </ol>

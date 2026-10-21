@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=bcfb5343b7f6142bc030023176f03a52799042b4">
+    <link rel="stylesheet" href="/assets/css/style.css?v=64ba66dc5aa8aab2d352e6c035c1271407a4ecc1">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -82,6 +82,7 @@
   <li>Git</li>
   <li>GitHub（アカウント作成）</li>
   <li>GitHub Desktop</li>
+  <li>GitHub CLI (gh)</li>
   <li>Docker Desktop</li>
   <li>Visual Studio Code</li>
 </ul>
@@ -234,7 +235,7 @@ Mac では特別な追加ソフトは不要。</p>
 
 <ul>
   <li>ターミナル上で以下を実行
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask docker
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install --cask docker-desktop
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -263,7 +264,7 @@ Mac では特別な追加ソフトは不要。</p>
 
 <h1 id="9-再起動と最終セットアップ">9. 再起動と最終セットアップ</h1>
 
-<p>3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、最後に VS Code の拡張機能をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップする。</p>
+<p>3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、VS Code の拡張機能と GitHub CLI をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップし、その後に Docker Desktop の WSL 統合を確認する。</p>
 
 <h2 id="91-再起動">9.1 再起動</h2>
 
@@ -314,6 +315,78 @@ code --install-extension ms-azuretools.vscode-docker
   </li>
   <li>インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。設定が終わったら <code class="language-plaintext highlighter-rouge">exit</code> と入力するか、Ubuntu のウィンドウを閉じる。</li>
 </ol>
+
+<h2 id="94-docker-desktop-の-wsl-統合を確認するwindows-のみ">9.4 Docker Desktop の WSL 統合を確認する（Windows のみ）</h2>
+
+<p>7 章で確認した <strong>Use WSL 2 instead of Hyper-V</strong> は、Docker Desktop が使う仮想化方式の設定である。
+これとは別に、<strong>どのディストリビューションの中から <code class="language-plaintext highlighter-rouge">docker</code> コマンドを使えるようにするか</strong>という設定がある。
+Ubuntu は 9.3 で入れたので、この確認は Ubuntu を入れた後に行う。</p>
+
+<ol>
+  <li>Docker Desktop を起動する</li>
+  <li><strong>Settings</strong> → <strong>Resources</strong> → <strong>WSL Integration</strong> を開く</li>
+  <li><strong>Ubuntu</strong> が有効になっていることを確認する。無効なら有効にして <strong>Apply</strong> を押す</li>
+</ol>
+
+<p>同じ手順は <a href="https://docs.docker.com/desktop/features/wsl/">Docker 公式ドキュメント</a> にもある。
+Docker Desktop の更新でメニュー構成が変わることがあるので、見つからない場合はそちらを参照する。</p>
+
+<p>有効になっていないと、Ubuntu の中で <code class="language-plaintext highlighter-rouge">docker</code> コマンドが見つからない。Docker Desktop 自体は
+インストールされているので、インストールし直しても解決しない。</p>
+
+<h2 id="95-github-cli-gh-のインストール">9.5 GitHub CLI (gh) のインストール</h2>
+
+<p>GitHub CLI は、コマンドラインから GitHub を操作するツールである。
+研究室のリポジトリ作成スクリプトもこれを使う。</p>
+
+<h3 id="951-windows-の場合">9.5.1 Windows の場合</h3>
+
+<p><strong>Ubuntu の中にインストールする。</strong> Windows 側に入れたものは Ubuntu から見えないため、
+<code class="language-plaintext highlighter-rouge">winget</code> は使わない。</p>
+
+<ol>
+  <li>Windows Terminal で <code class="language-plaintext highlighter-rouge">wsl</code> と入力し、Ubuntu のシェルに入る</li>
+  <li>以下を実行する
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -fsSL https://www.nw.is.kyusan-u.ac.jp/pcenv/pcenv-setup-gh.sh | bash
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>このスクリプトの中身は gh の
+<a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd">公式インストール手順</a>
+そのままである（<a href="/pcenv/pcenv-setup-gh.sh">pcenv-setup-gh.sh</a>）。手順が長いためスクリプトにしてある。</p>
+
+<p><code class="language-plaintext highlighter-rouge">curl: command not found</code> と出た場合は、先に <code class="language-plaintext highlighter-rouge">sudo apt install -y curl</code> を実行する。</p>
+
+<h3 id="952-mac-の場合">9.5.2 Mac の場合</h3>
+
+<ul>
+  <li>ターミナル上で以下を実行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install gh
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="953-認証">9.5.3 認証</h3>
+
+<p>OS を問わず、インストール後に認証を済ませておく。Windows では <strong>Ubuntu の中で</strong>実行する。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh auth login
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">GitHub.com</code> を選択</li>
+  <li><code class="language-plaintext highlighter-rouge">HTTPS</code> を選択</li>
+  <li><code class="language-plaintext highlighter-rouge">Login with a web browser</code> を選択</li>
+  <li>表示されたワンタイムコードをコピー</li>
+  <li>ブラウザが自動で開くので、コードを入力して認証を完了する</li>
+</ol>
+
+<p>以下で確認できる。バージョン情報と <code class="language-plaintext highlighter-rouge">Logged in to github.com</code> が表示されれば完了である。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh --version
+gh auth status
+</code></pre></div></div>
 
 
       <footer class="site-footer">
