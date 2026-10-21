@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/pr-preview/pr-52/assets/css/style.css?v=e2f8a37dd1a475038c81a1857fad70796310e449">
+    <link rel="stylesheet" href="/pr-preview/pr-52/assets/css/style.css?v=4bd87e51037fc81437010bf65fb8df4c8cb2c034">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -346,19 +346,17 @@ Docker Desktop の更新でメニュー構成が変わることがあるので�
 
 <ol>
   <li>Windows Terminal で <code class="language-plaintext highlighter-rouge">wsl</code> と入力し、Ubuntu のシェルに入る</li>
-  <li><a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd">公式手順</a>のとおり、以下を実行する
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> (type -p wget &gt;/dev/null || (sudo apt update &amp;&amp; sudo apt install wget -y)) \
- 	&amp;&amp; sudo mkdir -p -m 755 /etc/apt/keyrings \
- 	&amp;&amp; out=$(mktemp) &amp;&amp; wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
- 	&amp;&amp; cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg &gt; /dev/null \
- 	&amp;&amp; sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
- 	&amp;&amp; sudo mkdir -p -m 755 /etc/apt/sources.list.d \
- 	&amp;&amp; echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null \
- 	&amp;&amp; sudo apt update \
- 	&amp;&amp; sudo apt install gh -y
+  <li>以下を実行する
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -fsSL https://www.nw.is.kyusan-u.ac.jp/pcenv/pcenv-setup-gh.sh | bash
 </code></pre></div>    </div>
   </li>
 </ol>
+
+<p>このスクリプトの中身は gh の
+<a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd">公式インストール手順</a>
+そのままである（<a href="/pr-preview/pr-52/pcenv/pcenv-setup-gh.sh">pcenv-setup-gh.sh</a>）。手順が長いためスクリプトにしてある。</p>
+
+<p><code class="language-plaintext highlighter-rouge">curl: command not found</code> と出た場合は、先に <code class="language-plaintext highlighter-rouge">sudo apt install -y curl</code> を実行する。</p>
 
 <h3 id="952-mac-の場合">9.5.2 Mac の場合</h3>
 

@@ -44,19 +44,32 @@ echo Install Ubuntu distribution for WSL
 wsl --install -d Ubuntu
 if errorlevel 1 goto error
 
+echo Install GitHub CLI inside Ubuntu
+:: Piped through stdin rather than fetched or path-translated: no network
+:: dependency, no quoting of the script's own double quotes, and no need
+:: to know which drive this directory is on. Run as root so the script's
+:: sudo calls do not stop for the password just set during Ubuntu setup.
+if not exist "pcenv-setup-gh.sh" (
+    echo ERROR: pcenv-setup-gh.sh not found next to this batch file.
+    echo Download it from https://www.nw.is.kyusan-u.ac.jp/pcenv/ and retry.
+    pause
+    exit /b 1
+)
+type pcenv-setup-gh.sh | wsl -d Ubuntu -u root -- bash
+if errorlevel 1 goto error
+
 echo.
 echo ======================================================
 echo  Two steps remain and must be done by hand.
-echo  See sections 9.4 and 9.5 of the guide:
+echo  See sections 9.4 and 9.5.3 of the guide:
 echo    https://www.nw.is.kyusan-u.ac.jp/pcenv/
 echo.
 echo  1. Docker Desktop: Settings - Resources -
 echo     WSL Integration. Enable Ubuntu and press Apply.
 echo     Without it, "docker" is not found inside Ubuntu.
 echo.
-echo  2. Install the GitHub CLI inside Ubuntu, then run
-echo     "gh auth login" there. A gh installed on the
-echo     Windows side is not visible from Ubuntu.
+echo  2. Open Ubuntu and run "gh auth login" to
+echo     authenticate the GitHub CLI.
 echo ======================================================
 pause
 exit /b 0
