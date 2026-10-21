@@ -34,6 +34,7 @@ github:
 - Git
 - GitHub（アカウント作成）
 - GitHub Desktop
+- GitHub CLI (gh)
 - Docker Desktop
 - Visual Studio Code
 
@@ -161,7 +162,7 @@ Docker Desktop はコンテナ実行環境である。
 
 - ターミナル上で以下を実行
   ```
-  brew install --cask docker
+  brew install --cask docker-desktop
   ```
 
 # 8. Visual Studio Code
@@ -184,7 +185,7 @@ Visual Studio Code(以下 VSCode) は汎用エディタである。
 
 # 9. 再起動と最終セットアップ
 
-3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、最後に VS Code の拡張機能をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップする。
+3-8 章のインストールが終わったら、PATH の更新や WSL／Docker のサービスを反映させるために再起動を行い、VS Code の拡張機能と GitHub CLI をセットアップする。なお、Windows の場合は続けて Ubuntu もセットアップし、その後に Docker Desktop の WSL 統合を確認する。
 
 ## 9.1 再起動
 
@@ -228,3 +229,69 @@ WSL を最新版に更新したうえで、Ubuntu ディストリビューショ
     wsl --install -d Ubuntu
     ```
 3. インストール完了後、Ubuntu のウィンドウが開き、初期設定が始まる。画面の指示に従って Linux 用のユーザー名とパスワードを設定する。設定が終わったら `exit` と入力するか、Ubuntu のウィンドウを閉じる。
+
+## 9.4 Docker Desktop の WSL 統合を確認する（Windows のみ）
+
+7 章で確認した **Use WSL 2 instead of Hyper-V** は、Docker Desktop が使う仮想化方式の設定である。
+これとは別に、**どのディストリビューションの中から `docker` コマンドを使えるようにするか**という設定がある。
+Ubuntu は 9.3 で入れたので、この確認は Ubuntu を入れた後に行う。
+
+1. Docker Desktop を起動する
+2. **Settings** → **Resources** → **WSL Integration** を開く
+3. **Ubuntu** が有効になっていることを確認する。無効なら有効にして **Apply** を押す
+
+同じ手順は [Docker 公式ドキュメント](https://docs.docker.com/desktop/features/wsl/) にもある。
+Docker Desktop の更新でメニュー構成が変わることがあるので、見つからない場合はそちらを参照する。
+
+有効になっていないと、Ubuntu の中で `docker` コマンドが見つからない。Docker Desktop 自体は
+インストールされているので、インストールし直しても解決しない。
+
+## 9.5 GitHub CLI (gh) のインストール
+
+GitHub CLI は、コマンドラインから GitHub を操作するツールである。
+研究室のリポジトリ作成スクリプトもこれを使う。
+
+### 9.5.1 Windows の場合
+
+**Ubuntu の中にインストールする。** Windows 側に入れたものは Ubuntu から見えないため、
+`winget` は使わない。
+
+1. Windows Terminal で `wsl` と入力し、Ubuntu のシェルに入る
+2. 以下を実行する
+    ```
+    curl -fsSL https://www.nw.is.kyusan-u.ac.jp/pcenv/pcenv-setup-gh.sh | bash
+    ```
+
+このスクリプトの中身は gh の
+[公式インストール手順](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd)
+そのままである（[pcenv-setup-gh.sh](pcenv-setup-gh.sh)）。手順が長いためスクリプトにしてある。
+
+`curl: command not found` と出た場合は、先に `sudo apt install -y curl` を実行する。
+
+### 9.5.2 Mac の場合
+
+- ターミナル上で以下を実行
+  ```
+  brew install gh
+  ```
+
+### 9.5.3 認証
+
+OS を問わず、インストール後に認証を済ませておく。Windows では **Ubuntu の中で**実行する。
+
+```
+gh auth login
+```
+
+1. `GitHub.com` を選択
+2. `HTTPS` を選択
+3. `Login with a web browser` を選択
+4. 表示されたワンタイムコードをコピー
+5. ブラウザが自動で開くので、コードを入力して認証を完了する
+
+以下で確認できる。バージョン情報と `Logged in to github.com` が表示されれば完了である。
+
+```
+gh --version
+gh auth status
+```

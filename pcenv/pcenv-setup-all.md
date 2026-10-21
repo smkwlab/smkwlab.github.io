@@ -11,13 +11,20 @@ github:
 
 ## 1.1 Windows の場合
 
-1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat) と [pcenv-setup-stage2.bat](pcenv-setup-stage2.bat) をダウンロード
+1. [pcenv-setup-stage1.bat](pcenv-setup-stage1.bat)、[pcenv-setup-stage2.bat](pcenv-setup-stage2.bat)、[pcenv-setup-gh.sh](pcenv-setup-gh.sh) を**同じディレクトリに**ダウンロード
 2. **pcenv-setup-stage1.bat** をダブルクリックして実行（UAC ダイアログで `はい` をクリック）
 3. 途中で Docker Desktop のインストーラが起動したら、**Use WSL 2 instead of Hyper-V (recommended)** にチェックが入っていることを確認する。チェックが外れていたら入れてから次に進む。
 4. インストール完了のメッセージが表示されたら、PC を再起動
 5. 再起動後、**pcenv-setup-stage2.bat** をダブルクリックして実行
 6. VS Code 拡張機能のインストール完了メッセージが表示されたら、何かキーを押す
 7. Ubuntu のインストール後、Ubuntu のウィンドウが開き、Linux 用のユーザー名・パスワードを設定する画面になる。画面の指示に従って設定する。設定が終わったら `exit` と入力するか、Ubuntu のウィンドウを閉じる
+
+8. 続けて GitHub CLI が Ubuntu の中にインストールされる
+
+**この後に手作業が 2 つ残る。** 片方は GUI 設定、もう片方はブラウザでの認証なので自動化していない。
+
+9. Docker Desktop の WSL 統合を確認する（[9.4 章](./#94-docker-desktop-の-wsl-統合を確認するwindows-のみ)）
+10. Ubuntu を開き、`gh auth login` で認証する（[9.5.3 章](./#953-認証)）
 
 ## 1.2 Mac の場合
 
@@ -26,6 +33,10 @@ github:
 3. 以下のコマンドを実行
     ```
     bash pcenv-setup-all.sh
+    ```
+4. 終了後、GitHub CLI の認証を済ませる
+    ```
+    gh auth login
     ```
 
 ## 1.3 仕上げ: VS Code の日本語化拡張をインストール
