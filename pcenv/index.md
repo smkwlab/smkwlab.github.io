@@ -257,18 +257,16 @@ GitHub CLI は、コマンドラインから GitHub を操作するツールで�
 `winget` は使わない。
 
 1. Windows Terminal で `wsl` と入力し、Ubuntu のシェルに入る
-2. [公式手順](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd)のとおり、以下を実行する
+2. 以下を実行する
     ```
-    (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
-    	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
-    	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-    	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-    	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-    	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
-    	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    	&& sudo apt update \
-    	&& sudo apt install gh -y
+    curl -fsSL https://www.nw.is.kyusan-u.ac.jp/pcenv/pcenv-setup-gh.sh | bash
     ```
+
+このスクリプトの中身は gh の
+[公式インストール手順](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#installing-gh-on-linux-and-bsd)
+そのままである（[pcenv-setup-gh.sh](pcenv-setup-gh.sh)）。手順が長いためスクリプトにしてある。
+
+`curl: command not found` と出た場合は、先に `sudo apt install -y curl` を実行する。
 
 ### 9.5.2 Mac の場合
 
