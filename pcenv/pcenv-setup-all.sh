@@ -32,8 +32,11 @@ brew install git
 echo "Install GitHub Desktop"
 brew install --cask github
 
+echo "Install GitHub CLI"
+brew install gh
+
 echo "Install Docker Desktop"
-brew install --cask docker
+brew install --cask docker-desktop
 
 echo "Install Visual Studio Code"
 brew install --cask visual-studio-code
@@ -59,4 +62,6 @@ echo "======================================================"
 echo "  Setup completed."
 echo "  On first launch, Docker Desktop will request license"
 echo "  acceptance and your admin password."
+echo ""
+echo "  Then authenticate the GitHub CLI:  gh auth login"
 echo "======================================================"

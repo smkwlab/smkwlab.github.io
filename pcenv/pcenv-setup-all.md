@@ -19,6 +19,11 @@ github:
 6. VS Code 拡張機能のインストール完了メッセージが表示されたら、何かキーを押す
 7. Ubuntu のインストール後、Ubuntu のウィンドウが開き、Linux 用のユーザー名・パスワードを設定する画面になる。画面の指示に従って設定する。設定が終わったら `exit` と入力するか、Ubuntu のウィンドウを閉じる
 
+**この後に手作業が 2 つ残る。** スクリプトでは自動化していない。
+
+8. Docker Desktop の WSL 統合を確認する（[9.4 章](./#94-docker-desktop-の-wsl-統合を確認するwindows-のみ)）
+9. Ubuntu の中に GitHub CLI を入れて認証する（[9.5 章](./#95-github-cli-gh-のインストール)）
+
 ## 1.2 Mac の場合
 
 1. [pcenv-setup-all.sh](pcenv-setup-all.sh) をダウンロード
@@ -26,6 +31,10 @@ github:
 3. 以下のコマンドを実行
     ```
     bash pcenv-setup-all.sh
+    ```
+4. 終了後、GitHub CLI の認証を済ませる
+    ```
+    gh auth login
     ```
 
 ## 1.3 仕上げ: VS Code の日本語化拡張をインストール
