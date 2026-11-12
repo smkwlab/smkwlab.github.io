@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/pr-preview/pr-55/assets/css/style.css?v=7217e5ec35a4809799108b0415f4a95a94172f99">
+    <link rel="stylesheet" href="/pr-preview/pr-55/assets/css/style.css?v=82fe76a4dac34245de7adc48531aefe8de4fb089">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -564,7 +564,7 @@
 <p><strong>なぜ:</strong> 文献を引用する場所がずれていたり、書誌情報が足りなかったりすると、何の根拠なのか、どの文献なのかが分かりません。</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">\cite</code> は、その文献で裏付ける語や文の直後に置きます。</li>
+  <li>引用(LaTeX なら <code class="language-plaintext highlighter-rouge">\cite</code>)は、その文献で裏付ける語や文の直後に置きます。</li>
   <li>先行研究を紹介するときは、著者に敬称を付けず、論文を主語にします。</li>
   <li>RFC や論文は、URL だけでなく、著者、タイトル、発行年などを書きます。Web ページは、ページのタイトルと閲覧日を書きます。</li>
 </ul>
@@ -588,11 +588,20 @@
 <h2 id="checklist">6. 提出前のチェックリスト</h2>
 
 <p>PR を送る前に、次のことを確かめてください。
-どれも機械的に見つけられます。エディタの検索と、textlint の警告を使ってください。
-項目の多くは、LaTeX で書く場合のものです。</p>
+どれも機械的に見つけられます。エディタの検索と、textlint の警告を使ってください。</p>
+
+<h3 id="checklist-common">どの形式でも</h3>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>番号を手で書いていない。</strong> 図表、章、節の番号は <code class="language-plaintext highlighter-rouge">\label</code> と <code class="language-plaintext highlighter-rouge">\ref</code> で書く。「以下の図」「上の表」のように位置で指さない。
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>誤字脱字がない。</strong> 助詞の重複(「をを」)、送り仮名の不揃い、製品名の綴りと大文字小文字を確かめる。差分だけでも読み返してください。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>全角と半角が正しい。</strong> 全角空白、全角の英数字、「,」と「、」の混在がない。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>ソースは 1 文ごとに改行している。</strong> 1 行に何文も書くと、PR の差分でどの文を直したのかが見えにくくなります。</li>
+</ul>
+
+<h3 id="checklist-latex">LaTeX で書く場合</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>番号を手で書いていない。</strong> 図表、章、節の番号は <code class="language-plaintext highlighter-rouge">\label</code> と <code class="language-plaintext highlighter-rouge">\ref</code> で書く。図表は組版で位置が変わるので、「以下の図」「上の表」のように位置で指さない。
     <ul>
       <li>図表: <code class="language-plaintext highlighter-rouge">図\ref{fig:result}に示す</code></li>
       <li>節: <code class="language-plaintext highlighter-rouge">\ref{sec:result}で述べる</code>(「節」は付けない)</li>
@@ -600,9 +609,8 @@
     </ul>
   </li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>英字の語と和文の間に空白がある。</strong> 例: <code class="language-plaintext highlighter-rouge">設定は timeout で指定する</code>。空白がないと LaTeX がそこで改行できず、行が右の余白にはみ出します。数字、句読点、括弧の隣、<code class="language-plaintext highlighter-rouge">\ref</code> と <code class="language-plaintext highlighter-rouge">\cite</code> の前には要りません。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>誤字脱字がない。</strong> 助詞の重複(「をを」)、送り仮名の不揃い、製品名の綴りと大文字小文字を確かめる。差分だけでも読み返してください。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>全角と半角が正しい。</strong> 全角空白、全角の英数字、「,」と「、」の混在がない。<code class="language-plaintext highlighter-rouge">\cite</code> は句点の前に置く。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>ソースは 1 文ごとに改行している。</strong> <code class="language-plaintext highlighter-rouge">_</code>、<code class="language-plaintext highlighter-rouge">%</code>、<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">~</code> をエスケープしている(例: <code class="language-plaintext highlighter-rouge">book\_id</code>)。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong><code class="language-plaintext highlighter-rouge">\cite</code> は句点の前に置いている。</strong> 例: <code class="language-plaintext highlighter-rouge">用いた\cite{sample}。</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>特殊文字をエスケープしている。</strong> <code class="language-plaintext highlighter-rouge">_</code>、<code class="language-plaintext highlighter-rouge">%</code>、<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">~</code> は、そのままでは書けません(例: <code class="language-plaintext highlighter-rouge">book\_id</code>)。</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>レイアウトを手で強制していない。</strong> 本文に <code class="language-plaintext highlighter-rouge">\\</code>、<code class="language-plaintext highlighter-rouge">\newpage</code> を使わない。図表の位置指定は <code class="language-plaintext highlighter-rouge">[htbp]</code> にし、<code class="language-plaintext highlighter-rouge">[H]</code> は使わない。</li>
 </ul>
 
