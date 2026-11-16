@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/pr-preview/pr-55/assets/css/style.css?v=c55248b2ffd334015f8e6806902a0aba455821fe">
+    <link rel="stylesheet" href="/pr-preview/pr-55/assets/css/style.css?v=030399ed4086fde9b83aa5be5087ae5d3cafbedd">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -50,10 +50,11 @@
       <h1 id="論文の書き方の手引き">論文の書き方の手引き</h1>
 
 <p>この手引きは、論文やレポートを書くときに気を付けてほしいことをまとめたものです。
-週報、各種レポート、卒業論文、修士論文、学会の原稿のどれにも当てはまります。</p>
+週報、各種レポート、卒業論文、修士論文、学会の原稿のどれにも当てはまります。
+以下では、これらをまとめて「論文」と呼びます。</p>
 
 <p>ここに挙げたのは、これまでの添削で特に多く指摘してきたことです。
-書き始める前に一度読み、PR を送る前にもう一度読み返してください。
+書き始める前に一度読み、PR(プルリクエスト)を送る前にもう一度読み返してください。
 添削のコメントで、この手引きの項目を示すことがあります。</p>
 
 <p>前の章ほど論文全体に関わる話で、後の章ほど細かい話です。
@@ -63,7 +64,7 @@
 
 <ul>
   <li><strong>なぜ:</strong> それを直さないと、読者に何が起こるか</li>
-  <li><strong>悪い例と良い例:</strong> 例はすべて架空のものです</li>
+  <li><strong>悪い例と良い例:</strong> 直す前と直した後の文(どれも架空のもの)</li>
   <li><strong>確かめる問い:</strong> 自分の原稿を読み返すときに、自分に問いかけてほしいこと</li>
 </ul>
 
@@ -89,7 +90,7 @@
 
 <p><strong>なぜ:</strong> 「〜を開発する」「〜を用いて〜する」は手段です。
 手段だけを書くと、それができると誰の何が良くなるのかが読者に伝わらず、研究が成功したかどうかも判断できません。
-問題を「〜がない」と、手段がないことの形で書くのも同じです。
+問題を「〜がない」のように、手段がない形で書くのも同じです。
 先に何を良くしたいのかを書き、その後で、そのために何を使うのかを書いてください。</p>
 
 <p><strong>悪い例</strong></p>
@@ -103,58 +104,73 @@
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本研究の目的は、利用者が目的の本を書架で探す時間を短くすることである。そのために、利用者の位置を用いて本までの道順を示す。</p>
+  <p>本研究の目的は、利用者が探している本を書架で見つけるまでの時間を短くすることである。
+そのために、利用者の位置を用いて本までの道順を示す。</p>
 
-  <p>現在の図書室では、利用者が目的の本を見つけるまでに平均 10 分かかっていることが問題である。</p>
+  <p>現在の図書室では、利用者が探している本を見つけるまでに平均10分かかっていることが問題である。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> それは手段ではありませんか。その道具を使うことになったのは、そもそも何がしたかったからですか。それができると、誰の何が良くなりますか。</p>
+<p><strong>確かめる問い:</strong> それは手段ではありませんか。
+その道具を使うことになったのは、そもそも何がしたかったからですか。
+それができると、誰の何が良くなりますか。</p>
 
 <h3 id="rationale">1.2 選んだ理由を書く</h3>
 
 <p><strong>なぜ:</strong> 技術、方式、パラメータ、閾値などを選んだ理由がないと、読者には「たまたまそうした」のか「考えてそうした」のかが分かりません。
-試行錯誤の過程までは要りません。最終的に選んだ理由を書いてください。</p>
+試行錯誤の過程までは要りません。
+最終的に選んだ理由を書いてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>位置情報の取得間隔は 10 秒とした。</p>
+  <p>位置情報の取得間隔は10秒とした。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>位置情報の取得間隔は 10 秒とした。これは、停留所間の最短走行時間が約 30 秒であり、その間に 3 回以上位置を取得するためである。</p>
+  <p>位置情報の取得間隔は10秒とした。
+停留所への接近を判定するには、停留所の間で少なくとも3回位置を取得し、進む向きを求める必要がある。
+停留所の間の最短の走行時間は約30秒なので、10秒間隔なら3回取得できる。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> どうしてこの方式や値を選んだのですか。ほかの選択肢では駄目だったのですか。</p>
+<p><strong>確かめる問い:</strong> どうしてこの方式や値を選んだのですか。
+ほかの選択肢では駄目だったのですか。</p>
 
 <h3 id="assertion">1.3 主張の強さを根拠に合わせる</h3>
 
 <p><strong>なぜ:</strong> 根拠より強く言い切ると、読者は信用しなくなります。
-逆に、言い切れることを「考えられる」でぼかすと、誰の意見なのか分からなくなります。</p>
+逆に、根拠があって言い切れることを「考えられる」でぼかすと、誰の意見なのか分からなくなります。
+言い切るときは、その根拠も書いてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>貸出手続きの遅れの原因は入力画面にあると考えられる。実験によりこの方式の優位性を証明した。大学の授業では、出席確認に紙の名簿が使われている。</p>
+  <p>貸出手続きの遅れの原因は入力画面にあると考えられる。
+実験によりこの方式の優位性を証明した。
+大学の授業では、出席確認に紙の名簿が使われている。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>貸出手続きの遅れの原因は入力画面にある。実験の結果、この方式は比較した 2 方式より処理時間が短かった。本学の多くの授業では、出席確認に紙の名簿が使われている。</p>
+  <p>貸出手続きの所要時間を計測したところ、7割を入力画面での操作が占めていた。
+したがって、貸出手続きの遅れの主な原因は入力画面にある。
+実験の結果、この方式は比較した2方式より処理時間が短かった。
+本学の授業担当者への調査[4]では、回答者の6割が出席確認に紙の名簿を使っていた。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この語を使えるだけの根拠がありますか。それは、どこでも同じですか。「考えられる」は、言い切れませんか。</p>
+<p><strong>確かめる問い:</strong> この語を使えるだけの根拠がありますか。
+それは、どこでも同じですか。
+「考えられる」は、言い切れませんか。</p>
 
 <hr />
 
 <h2 id="reader">2. 読者が付いて来られるようにする</h2>
 
-<h3 id="overview">2.1 全体を先に述べてから細部に入る</h3>
+<h3 id="overview">2.1 何の話かを先に示す</h3>
 
-<p><strong>なぜ:</strong> 全体が何なのかを知らないまま部品や設定値の説明が始まると、読者は何のための話か分からないまま読むことになります。
+<p><strong>なぜ:</strong> 全体が何なのかを知らないうちに部品や設定値の説明が始まると、読者は何のための話か分からずに読むことになります。
 前に出てこなかった話題が急に始まるのも同じで、読者はなぜその話になったのか分からず、置いていかれます。
 章、節、段落の初めに、それが全体として何なのか、これから何を説明するのかを書いてください。
 新しい話を始めるときは、その話が必要になる理由を先に書きます。</p>
@@ -162,59 +178,74 @@
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>本アプリは画面部、通知部、記録部の 3 つで構成される。画面部は天気データを 10 分ごとに取得する。</p>
+  <p>本アプリは画面部、通知部、記録部の3つで構成される。
+画面部は天気データを10分ごとに取得する。</p>
 
-  <p>本研究の目的は蔵書検索の高速化である。そこで、書架の配置図を作成した。</p>
+  <p>本研究の目的は蔵書検索の高速化である。
+そこで、書架の配置図を作成した。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本アプリは、外出前に傘が必要かどうかを知らせるアプリである。本章では、まず全体の流れを述べ、その後で画面部、通知部、記録部を順に説明する。</p>
+  <p>本アプリは、外出前に傘が必要かどうかを利用者に知らせる。
+本章では、まず全体の流れを述べ、その後で画面部、通知部、記録部を順に説明する。</p>
 
-  <p>本研究の目的は蔵書検索の高速化である。検索の所要時間は、本の探索範囲に左右される。そこで、探索範囲を絞るため、書架の配置図を作成した。</p>
+  <p>本研究の目的は蔵書検索の高速化である。
+検索の所要時間は、本の探索範囲に左右される。
+そこで、探索範囲を絞るため、書架の配置図を作成した。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> それを知らない人に一言で説明するとしたら、何と言いますか。この話は前に出てきましたか。なぜここでこの話が始まるのか、読者に分かりますか。</p>
+<p><strong>確かめる問い:</strong> それを知らない人に一言で説明するとしたら、何と言いますか。
+この話は前に出てきましたか。
+なぜここでこの話が始まるのか、読者に分かりますか。</p>
 
 <h3 id="reader-knowledge">2.2 読者の前提知識に合わせて説明する</h3>
 
 <p><strong>なぜ:</strong> 自分や研究室では当たり前のことでも、初めて読む人には分かりません。
-読者は、同じ分野の 1 学年下の学生、または研究を始める前の自分だと考えてください。</p>
+読者は、同じ分野の1学年下の学生、または研究を始める前の自分だと考えてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>位置の補正には XYZ を用いた。貸出台帳を移行した。</p>
+  <p>位置の補正には XYZ を用いた。
+貸出台帳を移行した。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>位置の補正には XYZ(Extended Yard Zoning)を用いた。XYZ は地図を格子に区切って座標を補正する手法である[1]。
-貸出台帳は、図書室が利用者ごとの貸出履歴を記録している表である。本研究ではこれを移行した。</p>
+  <p>位置の補正には XYZ(Extended Yard Zoning)を用いた。
+XYZ は地図を格子に区切って座標を補正する手法である[1]。
+貸出台帳は、図書室が利用者ごとの貸出履歴を記録している表である。
+本研究ではこれを移行した。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この略語は何の略ですか。初めて読む人は、これで全体像を想像できますか。</p>
+<p><strong>確かめる問い:</strong> この略語は何の略ですか。
+初めて読む人は、これで全体像を想像できますか。</p>
 
 <h3 id="define-first">2.3 説明する前に使わない</h3>
 
-<p><strong>なぜ:</strong> 自分で作った語や、システムの中でだけ意味を持つ語(画面名、機能名、データ名)を説明なしに使うと、読者はそこで止まってしまいます。
-説明は、その語を最初に使う前に書いてください。後で説明するなら、どこで説明するかを書きます。</p>
+<p><strong>なぜ:</strong> 自分で作った語やシステムの中でだけ意味を持つ語(画面名、機能名、データ名)を説明なしに使うと、読者はそこで止まってしまいます。
+説明は、その語を最初に使う前に書いてください。
+後で説明するなら、どこで説明するかを書きます。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>通知は配信枠の残量に応じて送信する。(以降の節で)配信枠とは、1 日に送信できる通知の上限である。</p>
+  <p>通知は配信枠の残量に応じて送信する。
+(以降の節で)配信枠とは、1日に送信できる通知の上限である。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>1 日に送信できる通知の上限を配信枠と呼ぶ。通知は配信枠の残量に応じて送信する。</p>
+  <p>1日に送信できる通知の上限を配信枠と呼ぶ。
+通知は配信枠の残量に応じて送信する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この語は、ここまでに出てきましたか。事情を知らない人にも伝わりますか。</p>
+<p><strong>確かめる問い:</strong> この語は、ここまでに出てきましたか。
+事情を知らない人にも伝わりますか。</p>
 
 <hr />
 
@@ -234,95 +265,118 @@
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>返却ボタンを押すと、貸出表の該当行に返却日時を記録し、一覧画面に戻る。貸出中でない本を選んだ場合は警告を表示する。</p>
+  <p>返却ボタンを押すと、貸出表の該当行に返却日時を記録し、一覧画面に戻る。
+貸出中でない本を選んだ場合は警告を表示する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この機能をどうやって実現しましたか。この値の出どころと保存先はどこですか。ボタンを押したら何が起こりますか。</p>
+<p><strong>確かめる問い:</strong> この機能をどうやって実現しましたか。
+この値の出どころと保存先はどこですか。
+ボタンを押したら何が起こりますか。</p>
 
 <h3 id="conditions">3.2 使った技術の役割と、実験の条件を書く</h3>
 
 <p><strong>なぜ:</strong> 技術の一般的な解説だけでは、その研究で何に使ったのかが分かりません。
-実験や調査は、条件が書かれていなければ、読者が結果を評価できず、再現もできません。
+実験や調査の条件が書かれていなければ、読者は結果を評価できず、再現もできません。
 目的、日時、対象者、回答者数と依頼した人数、手順、設定値を書いてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>図書室の利用者にアンケートを実施した。5 名から回答を得た。</p>
+  <p>図書室の利用者にアンケートを実施した。
+5名から回答を得た。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>蔵書検索の使いやすさを確認するため、2 月 3 日から 7 日に図書委員 12 名へアンケートを依頼し、5 名から回答を得た。設問は付録 A に示す。</p>
+  <p>蔵書検索の使いやすさを確認するため、2月3日から7日に図書委員12名へアンケートを依頼し、5名から回答を得た。
+設問は付録 A に示す。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この研究では、この技術を何のために使っていますか。いつ、誰を対象に、どうやって調べましたか。</p>
+<p><strong>確かめる問い:</strong> この研究では、この技術を何のために使っていますか。
+いつ、誰を対象に、どうやって調べましたか。</p>
 
 <h3 id="citation">3.3 使った技術と外部の事実に出典を付ける</h3>
 
 <p><strong>なぜ:</strong> 自分で確かめたことではない事実(技術の説明、統計、ほかの研究の結果)には、出典が要ります。
-出典がないと、読者はそれが正しいのかを確かめられません。規格書や公式の文書など、元の資料に当たってください。</p>
+出典がないと、読者はそれが正しいのかを確かめられません。
+規格書や公式の文書など、元の資料に当たってください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>TCP は、データを確実に届けるためのプロトコルである。近年、若者の読書離れが進んでいる。</p>
+  <p>TCP は、データを確実に届けるためのプロトコルである。
+近年、若者の読書離れが進んでいる。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>TCP は、データの到達確認と再送によって信頼性のある通信を提供するプロトコルである[1]。ある全国調査[2]によると、1 か月に 1 冊も本を読まない大学生は 4 割を超える。</p>
+  <p>TCP は、データの到達確認と再送によって信頼性のある通信を提供するプロトコルである[1]。
+「大学生の読書に関する全国調査」[2]によると、1か月に1冊も本を読まない大学生は4割を超える。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この説明の出どころはどこですか。規格書や教科書と読み比べましたか。</p>
+<p><strong>確かめる問い:</strong> この説明の出どころはどこですか。
+規格書や教科書と読み比べましたか。</p>
 
 <h3 id="figure">3.4 図表は本文で導入し、説明する</h3>
 
 <p><strong>なぜ:</strong> 「図に示す」とだけ書くと、読者は図から何を読み取ればよいのか分かりません。
-何の実験かを説明してから結果を示し、図の読み方と、図から何が言えるかを本文に書いてください。</p>
+何の実験かを説明してから結果を示し、図の読み方と図から何が言えるかを本文に書いてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>結果を図 5.1 に示す。次に考察を述べる。(この後の段落で)実験では 2 種類の方式を比較した。</p>
+  <p>結果を図5.1に示す。
+次に考察を述べる。
+(この後の段落で)実験では2種類の方式を比較した。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>2 種類の方式で、応答時間を比較した。結果を図 5.1 に示す。横軸は利用者数、縦軸は応答時間である。利用者が 50 人を超えると応答時間が急に増えている。</p>
+  <p>2種類の方式で、応答時間を比較した。
+応答時間の測定結果を図5.1に示す。
+横軸は利用者数、縦軸は応答時間である。
+利用者が50人を超えると応答時間が急に増えている。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この図から何を読み取ってほしいのか、本文に書いてありますか。どんな実験か分かる前に、結果を見せていませんか。</p>
+<p><strong>確かめる問い:</strong> この図から何を読み取ってほしいのか、本文に書いてありますか。
+どんな実験か分かる前に、結果を見せていませんか。</p>
 
 <hr />
 
 <h2 id="flow">4. 話の流れを整える</h2>
 
-<h3 id="causality">4.1 「なので」の間をつなぐ</h3>
+<h3 id="causality">4.1 理由と結論の間を省かない</h3>
 
 <p><strong>なぜ:</strong> 書き手の頭の中ではつながっていても、途中の段階が書かれていなければ、読者には飛躍に見えます。
-「A なので B」と書いたら、A が本当に B の理由になっているかを確かめてください。</p>
+「A。このため B。」と書いたら、A が本当に B の理由になっているかを確かめてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>返却を忘れる利用者が多い。そのため、書架を増やす必要がある。</p>
+  <p>返却を忘れる利用者が多い。
+そのため、書架を増やす必要がある。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>返却を忘れる利用者が多い。このため貸出中の本が増え、借りたい本が書架にない状況が生じている。</p>
+  <p>返却を忘れる利用者が多い。
+このため、貸出中のまま戻らない本が増え、借りたい本が書架にないことが多い。
+書架を増やしても、この状況は変わらない。
+必要なのは、返却を促す仕組みである。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> なぜそう言えるのか、と聞かれたら答えられますか。「ため」の前と後は本当につながっていますか。ほかの方法はありませんか。</p>
+<p><strong>確かめる問い:</strong> なぜそう言えるのか、と聞かれたら答えられますか。
+「ため」の前と後は本当につながっていますか。
+ほかの方法はありませんか。</p>
 
-<h3 id="short-paragraph">4.2 1 文だけの段落を並べない</h3>
+<h3 id="short-paragraph">4.2 1文だけの段落を並べない</h3>
 
-<p><strong>なぜ:</strong> 段落は、ひとまとまりの話を入れるものです。1 文ずつ段落を分けると、話のまとまりが読者に見えません。
+<p><strong>なぜ:</strong> 段落は、ひとまとまりの話を入れるものです。
+1文ずつ段落を分けると、話のまとまりが読者に見えません。
 前の段落の続きの話なら、同じ段落にまとめてください。</p>
 
 <p><strong>悪い例</strong></p>
@@ -338,10 +392,12 @@
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本機能では貸出履歴を一覧で表示する。一覧は新しい順に並び、行を押すと詳細を表示する。</p>
+  <p>本機能では貸出履歴を一覧で表示する。
+一覧は新しい順に並び、行を押すと詳細を表示する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> ここで段落を分けた理由は何ですか。前の文の続きになっていませんか。</p>
+<p><strong>確かめる問い:</strong> ここで段落を分けた理由は何ですか。
+前の文の続きになっていませんか。</p>
 
 <h3 id="repetition">4.3 同じことを繰り返さない</h3>
 
@@ -351,16 +407,18 @@
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>検索機能は語句で検索する機能である。この機能により語句で検索できる。</p>
+  <p>検索機能は語句で検索する機能である。
+この機能により語句で検索できる。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>検索機能は語句で蔵書を検索する機能である。</p>
+  <p>検索機能は、入力した語句を含む蔵書を探す。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 前の節と同じことを書いていませんか。この節は、この先の話に必要ですか。</p>
+<p><strong>確かめる問い:</strong> 前の節と同じことを書いていませんか。
+この節は、この先の話に必要ですか。</p>
 
 <hr />
 
@@ -369,21 +427,25 @@
 <h3 id="subject">5.1 誰の動作かを明らかにする</h3>
 
 <p><strong>なぜ:</strong> 主語がない、または主語と動作が合っていないと、利用者、管理者、システムのどれが動いているのか分かりません。
-理由がなければ、「〜する」の形にそろえてください。</p>
+「〜される」のような受け身が混ざると、動作する者はさらに見えにくくなります。
+理由がなければ、動作する者を主語にして「〜する」の形で書いてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>通知機能は、利用者の予約状況を確認して判断した。停留所を選択すると、通知時刻が設定される。</p>
+  <p>通知機能は、利用者の予約状況を確認して判断した。
+停留所を選択すると、通知時刻が設定される。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本システムは利用者の予約状況を確認し、通知の要否を判定する。利用者が停留所を選択すると、本システムが通知時刻を設定する。</p>
+  <p>本システムは利用者の予約状況を確認し、通知の要否を判定する。
+利用者が停留所を選択すると、本システムが通知時刻を設定する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この「確認する」のは誰ですか。画面や機能が、人の動作をしていませんか。</p>
+<p><strong>確かめる問い:</strong> この「確認する」のは誰ですか。
+画面や機能が、人の動作をしていませんか。</p>
 
 <h3 id="collocation">5.2 語の組み合わせが成り立つか確かめる</h3>
 
@@ -393,13 +455,17 @@
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>プリンタが画面に結果を表示する。処理時間が少ない。一覧を自動化させる。</p>
+  <p>プリンタが画面に検索結果を表示する。
+処理時間が少ない。
+一覧を自動化させる。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>アプリケーションが画面に結果を表示する。処理時間が短い。一覧の作成を自動化する。</p>
+  <p>アプリケーションが画面に検索結果を表示する。
+処理時間が短い。
+一覧の作成を自動化する。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> 主語と述語だけを読んで、意味が通りますか。</p>
@@ -407,33 +473,37 @@
 <h3 id="particle">5.3 助詞と限定の語を選ぶ</h3>
 
 <p><strong>なぜ:</strong> 助詞を取り違えると、文が不自然になります。
-また、「は」「主要な」「など」は、ほかにも何かあるように読者に思わせます。</p>
+また、「は」「主要な」「など」は、文脈によっては、ほかにも何かあるように読者に思わせます。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>利用者は検索画面をキーワードに入力する。予約システムの主要な機能は以下の 2 つである。(機能は 2 つしかない)</p>
+  <p>利用者は検索画面をキーワードに入力する。
+予約システムの主要な機能は以下の2つである。(機能は2つしかない)</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>利用者は検索画面にキーワードを入力する。予約システムの機能は以下の 2 つである。</p>
+  <p>利用者は検索画面にキーワードを入力する。
+予約システムの機能は以下の2つである。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 声に出して読むと自然ですか。「は」や「主要な」で、ありもしない対比を読者に想像させていませんか。</p>
+<p><strong>確かめる問い:</strong> 声に出して読むと自然ですか。
+「は」や「主要な」で、ありもしない対比を読者に想像させていませんか。</p>
 
 <h3 id="comma">5.4 読点は意味の切れ目に打つ</h3>
 
-<p><strong>なぜ:</strong> 読点が多すぎると文が細切れになり、少なすぎたり位置がずれていたりすると、掛かり先を読み違えます。
-読点は、意味の切れ目に打ってください。項目を並べるときは、読点ではなく「・」か「と」を使います。</p>
+<p><strong>なぜ:</strong> 読点が多すぎると文が細切れになり、少なすぎたり位置がずれていたりすると、係り先を読み違えます。
+読点は、意味の切れ目に打ってください。
+語を並べる読点と文の切れ目の読点が1文に混ざるときは、並べる側を「・」か「と」にします。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
   <p>本研究では、貸出履歴や、返却日時を、一覧で表示する。</p>
 
-  <p>学生を対象とした図書の検索機能と、著者名、書名、出版年、分類で絞り込む機能がある。</p>
+  <p>学生を対象とした図書の検索機能と、著者名、書名、出版年、分類で検索結果を絞り込む機能がある。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
@@ -441,48 +511,58 @@
 <blockquote>
   <p>本研究では貸出履歴や返却日時を一覧で表示する。</p>
 
-  <p>学生を対象とした、図書の検索機能と、著者名・書名・出版年・分類で絞り込む機能がある。</p>
+  <p>学生を対象とした、図書の検索機能と、著者名・書名・出版年・分類で検索結果を絞り込む機能がある。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この読点を外すと、意味が変わりますか。読点がないと、別の語に掛かって読めませんか。</p>
+<p><strong>確かめる問い:</strong> この読点を外すと、意味が変わりますか。
+読点がないと、別の語に係って読めませんか。</p>
 
 <h3 id="padding">5.5 決まり文句で文を水増ししない</h3>
 
 <p><strong>なぜ:</strong> 「〜を行う」「〜することができる」のような言い回しは、文を長くするだけで、中身を増やしません。
-どの文も同じ動詞になり、単調にもなります。全部をなくす必要はありませんが、短く言えるなら短くしてください。</p>
+どの文も同じ動詞になり、単調にもなります。
+全部をなくす必要はありません。
+短く言えるなら、短くしてください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>本研究では利用者アンケートの分析を行える仕組みの開発を行った。本システムでは蔵書の検索を行うことができる。</p>
+  <p>本研究では利用者アンケートの分析を行える仕組みの開発を行った。
+本システムでは蔵書の検索を行うことができる。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本研究では利用者アンケートを分析できる仕組みを開発した。本システムでは蔵書を検索できる。</p>
+  <p>本研究では利用者アンケートを分析できる仕組みを開発した。
+本システムでは蔵書を検索できる。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 「〜できる」「〜する」と短く言えませんか。同じ言い回しが、ほかの文にもありませんか。</p>
+<p><strong>確かめる問い:</strong> 「〜できる」「〜する」と短く言えませんか。
+同じ言い回しが、ほかの文にもありませんか。</p>
 
-<h3 id="same-word">5.6 同じ語を繰り返さない</h3>
+<h3 id="same-word">5.6 同じ語や要らない語を削る</h3>
 
-<p><strong>なぜ:</strong> 1 文の中や隣り合う文で同じ語が重なると、くどく読みにくくなります。
-消しても意味が変わらない語(「実際に」「について」など)も、削ってください。</p>
+<p><strong>なぜ:</strong> 1文の中や隣り合う文で同じ語が重なると、くどく読みにくくなります。
+消しても意味が変わらない語(「実際に」「について」など)も、同じように文を重くします。
+どちらも削ってください。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>検索の実行は検索ボタンで実行する。在庫の管理のための在庫データの更新は在庫管理者が行う。</p>
+  <p>検索の実行は検索ボタンで実行する。
+在庫の管理のための在庫データの更新は在庫管理者が行う。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>検索ボタンを押すと検索を開始する。在庫データは管理者が更新する。</p>
+  <p>検索ボタンを押すと検索を開始する。
+在庫データは管理者が更新する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 声に出して読むと、くどくありませんか。この語を消すと、意味が変わりますか。</p>
+<p><strong>確かめる問い:</strong> 声に出して読むと、くどくありませんか。
+この語を消すと、意味が変わりますか。</p>
 
 <hr />
 
@@ -496,56 +576,64 @@
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>本研究で開発する仕組みを「予約ナビ」と呼ぶ。(後の章で)会員は通知を確認する。登録者は通知を確認した後、本アプリを閉じる。</p>
+  <p>本研究で開発する仕組みを「予約ナビ」と呼ぶ。
+(後の章で)会員は通知を確認する。
+登録者は通知を確認した後、本アプリを閉じる。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>本研究で開発する仕組みを「予約ナビ」と呼ぶ。(後の章で)会員は通知を確認する。会員は通知を確認した後、「予約ナビ」を閉じる。</p>
+  <p>本研究で開発する仕組みを「予約ナビ」と呼ぶ。
+(後の章で)会員は通知を確認した後、「予約ナビ」を閉じる。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> この 2 つの語は使い分けていますか。同じものなら、そろえましょう。</p>
+<p><strong>確かめる問い:</strong> この2つの語は使い分けていますか。
+同じものなら、そろえましょう。</p>
 
 <h3 id="what-of">6.2 「何の」「何を」を省かない</h3>
 
-<p><strong>なぜ:</strong> 「値」「結果」「割合」「データ」だけでは、何についての値なのか分かりません。</p>
+<p><strong>なぜ:</strong> 「値」「結果」「割合」「データ」だけでは、何についてのものなのか分かりません。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>割合は 30% であった。</p>
+  <p>割合は30%であった。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>全便のうち 5 分以上遅延した便の割合は 30% であった。</p>
+  <p>全便のうち5分以上遅延した便の割合は30%であった。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 何の割合ですか。何の結果ですか。</p>
+<p><strong>確かめる問い:</strong> 何の割合ですか。
+何の結果ですか。</p>
 
 <h3 id="specific">6.3 語だけで対象が分かるようにする</h3>
 
-<p><strong>なぜ:</strong> 「ボタン」「結果」「履歴」だけでは、どの画面のどのボタンなのか、読者は前後を読み直さないと分かりません。</p>
+<p><strong>なぜ:</strong> 「ボタン」「結果」「履歴」だけでは、どの画面の何を指すのか、読者は前後を読み直さないと分かりません。</p>
 
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>結果を保存する。ボタンを押す。</p>
+  <p>結果を保存する。
+ボタンを押す。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>検索結果を保存する。テンプレート選択ボタンを押す。</p>
+  <p>検索結果を保存する。
+テンプレート選択ボタンを押す。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> これは、どの画面の何のことですか。一般的な話に読めませんか。</p>
+<p><strong>確かめる問い:</strong> これは、どの画面の何のことですか。
+一般的な話に読めませんか。</p>
 
 <h3 id="vague">6.4 ぼかした語を具体的にする</h3>
 
-<p><strong>なぜ:</strong> 「適切な」「様々な」「一定の」「不十分」「使いにくい」のような語は、幅が広すぎて、読者は程度も中身も想像できません。
+<p><strong>なぜ:</strong> 「適切な」「様々な」「一定の」「不十分」「使いにくい」「など」のような語は、幅が広すぎて、読者は程度も中身も想像できません。
 判断の条件は、実際の値で書いてください。</p>
 
 <p><strong>悪い例</strong></p>
@@ -559,12 +647,15 @@
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>気温が 30 度以上のときは、利用者に水やりを促す通知を送る。</p>
+  <p>気温が30度以上のときは、利用者に水やりを促す通知を送る。</p>
 
-  <p>到着予測時刻の 5 分前に利用者へ通知する。</p>
+  <p>到着予測時刻の5分前に利用者へ通知する。</p>
 </blockquote>
 
-<p><strong>確かめる問い:</strong> 具体的には何が起こるのですか。どれくらいですか。「適切な」とは、具体的に何のことですか。「など」には、ほかに何が入りますか。</p>
+<p><strong>確かめる問い:</strong> 具体的には何が起こるのですか。
+どれくらいですか。
+「適切な」とは、具体的に何のことですか。
+「など」には、ほかに何が入りますか。</p>
 
 <h3 id="spoken">6.5 話し言葉を使わない</h3>
 
@@ -589,19 +680,27 @@
 <h2 id="checklist">7. 提出前のチェックリスト</h2>
 
 <p>PR を送る前に、次のことを確かめてください。
-どれも、エディタの検索や textlint の警告、文献欄の見直しで見つけられます。</p>
+どれも、エディタの検索、textlint の警告、文献欄の見直しで見つけられます。
+textlint は日本語の文章の誤りを指摘する道具で、研究室の執筆環境に入っています。</p>
 
 <h3 id="checklist-common">どの形式でも</h3>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>誤字脱字がない。</strong> 助詞の重複(「をを」)、送り仮名の不揃い、製品名の綴りと大文字小文字を確かめる。差分だけでも読み返してください。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>全角と半角が正しい。</strong> 全角空白、全角の英数字、「,」と「、」の混在がない。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>ソースは 1 文ごとに改行している。</strong> 1 行に何文も書くと、PR の差分でどの文を直したのかが見えにくくなります。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>文献を正しい場所で、正しい形で引用している。</strong> 文献がないと、何の根拠なのか、どの文献なのかが読者に分かりません。
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>誤字脱字がない。</strong>
+助詞の重複(「をを」)、送り仮名の不揃い、製品名の綴りと大文字小文字を確かめてください。
+差分だけでも読み返してください。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>全角と半角が正しい。</strong>
+全角空白、全角の英数字、「,」と「、」の混在がないことを確かめてください。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>ソースは1文ごとに改行している。</strong>
+1行に何文も書くと、PR の差分でどの文を直したのかが見えにくくなります。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>文献を正しい場所で、正しい形で引用している。</strong>
+引用の場所や形が正しくないと、何の根拠なのか、どの文献なのかが読者に分かりません。
     <ul>
-      <li>引用(LaTeX なら <code class="language-plaintext highlighter-rouge">\cite</code>)は、その文献で裏付ける語や文の直後に置く。</li>
-      <li>先行研究を紹介するときは、著者に敬称(「氏」など)を付けず、論文を主語にする。例: <code class="language-plaintext highlighter-rouge">「公開サービスへのトラフィックの解析」[3]では、…を分析している。</code></li>
-      <li>RFC や論文は、URL だけでなく、著者、タイトル、発行年などを書く。Web ページは、ページのタイトルと閲覧日を書く。</li>
+      <li>引用は、その文献で裏付ける語の直後か、裏付ける文の句点の前に置きます。</li>
+      <li>先行研究を紹介するときは、著者に敬称(「氏」など)を付けず、論文を主語にします。
+例: <code class="language-plaintext highlighter-rouge">「公開サービスへのトラフィックの解析」[3]では、…を分析している。</code></li>
+      <li>RFC や論文は、URL だけでなく、著者、タイトル、発行年などを書きます。
+Web ページは、ページのタイトルと閲覧日を書きます。</li>
     </ul>
   </li>
 </ul>
@@ -609,23 +708,34 @@
 <h3 id="checklist-latex">LaTeX で書く場合</h3>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>番号を手で書いていない。</strong> 図表、章、節の番号は <code class="language-plaintext highlighter-rouge">\label</code> と <code class="language-plaintext highlighter-rouge">\ref</code> で書く。図表は組版で位置が変わるので、「以下の図」「上の表」のように位置で指さない。
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>番号を手で書いていない。</strong>
+図表、章、節の番号は <code class="language-plaintext highlighter-rouge">\label</code> と <code class="language-plaintext highlighter-rouge">\ref</code> で書きます。
+図表は組版で位置が変わるので、「以下の図」「上の表」のように位置で指さないでください。
     <ul>
       <li>図表: <code class="language-plaintext highlighter-rouge">図\ref{fig:result}に示す</code></li>
       <li>節: <code class="language-plaintext highlighter-rouge">\ref{sec:result}で述べる</code>(「節」は付けない)</li>
       <li>章: <code class="language-plaintext highlighter-rouge">第\ref{chap:design}章</code></li>
     </ul>
   </li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>英字の語と和文の間に空白がある。</strong> 例: <code class="language-plaintext highlighter-rouge">設定は timeout で指定する</code>。空白がないと LaTeX がそこで改行できず、行が右の余白にはみ出します。数字、句読点、括弧の隣、<code class="language-plaintext highlighter-rouge">\ref</code> と <code class="language-plaintext highlighter-rouge">\cite</code> の前には要りません。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>数値と単位の間に普通の空白を入れていない。</strong> 空白を入れずに <code class="language-plaintext highlighter-rouge">200Hz</code> と書くか、細い空白 <code class="language-plaintext highlighter-rouge">\,</code> を使って <code class="language-plaintext highlighter-rouge">200\,Hz</code> と書く。普通の空白だと、数値と単位の間で行が分かれることがあります。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong><code class="language-plaintext highlighter-rouge">\cite</code> は句点の前に置いている。</strong> 例: <code class="language-plaintext highlighter-rouge">用いた\cite{sample}。</code></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>特殊文字をエスケープしている。</strong> <code class="language-plaintext highlighter-rouge">_</code>、<code class="language-plaintext highlighter-rouge">%</code>、<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">~</code> は、そのままでは書けません(例: <code class="language-plaintext highlighter-rouge">book\_id</code>)。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>レイアウトを手で強制していない。</strong> 本文に <code class="language-plaintext highlighter-rouge">\\</code>、<code class="language-plaintext highlighter-rouge">\newpage</code> を使わない。図表の位置指定は <code class="language-plaintext highlighter-rouge">[htbp]</code> にし、<code class="language-plaintext highlighter-rouge">[H]</code> は使わない。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>英字の語と和文の間に空白がある。</strong>
+空白がないと LaTeX がそこで行を折り返せず、長い語が右の余白にはみ出します。
+数字と和文の間、句読点と括弧の隣、<code class="language-plaintext highlighter-rouge">\ref</code> と <code class="language-plaintext highlighter-rouge">\cite</code> の前には入れません。
+例: <code class="language-plaintext highlighter-rouge">設定は timeout で指定する</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>数値と単位の間に普通の空白を入れていない。</strong>
+空白を入れずに <code class="language-plaintext highlighter-rouge">200Hz</code> と書くか、細い空白 <code class="language-plaintext highlighter-rouge">\,</code> を使って <code class="language-plaintext highlighter-rouge">200\,Hz</code> と書きます。
+普通の空白だと、数値と単位が別の行に分かれることがあります。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong><code class="language-plaintext highlighter-rouge">\cite</code> は句点の前に置いている。</strong>
+例: <code class="language-plaintext highlighter-rouge">用いた\cite{sample}。</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>特殊文字をエスケープしている。</strong>
+<code class="language-plaintext highlighter-rouge">_</code>、<code class="language-plaintext highlighter-rouge">%</code>、<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">~</code> は、そのままでは書けません(例: <code class="language-plaintext highlighter-rouge">book\_id</code>)。</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>レイアウトを手で強制していない。</strong>
+本文に <code class="language-plaintext highlighter-rouge">\\</code>、<code class="language-plaintext highlighter-rouge">\newpage</code> を使わないでください。
+図表の位置指定は <code class="language-plaintext highlighter-rouge">[htbp]</code> にし、<code class="language-plaintext highlighter-rouge">[H]</code> は使わないでください。</li>
 </ul>
 
 <hr />
 
-<p>この手引きについて質問や気付いたことがあれば、気軽に聞いてください。</p>
+<p>この手引きについて、質問や気付いたことがあれば、気軽に伝えてください。</p>
 
 
       <footer class="site-footer">
