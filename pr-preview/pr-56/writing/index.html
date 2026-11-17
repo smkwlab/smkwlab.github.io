@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/pr-preview/pr-56/assets/css/style.css?v=842f902eb470124cb69b9e2bc23a803be76c6eb0">
+    <link rel="stylesheet" href="/pr-preview/pr-56/assets/css/style.css?v=c4f0ffdefae913f8d7ef3184d6a7ff97e9905bdf">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -57,8 +57,8 @@
 書き始める前に一度読み、PR(プルリクエスト)を送る前にもう一度読み返してください。
 添削のコメントで、この手引きの項目を示すことがあります。</p>
 
-<p>前の章ほど論文全体に関わる話で、後の章ほど細かい話です。
-書き始めるときは前の章を、書き上げて読み返すときは後の章を中心に確かめてください。</p>
+<p>この手引きでは、前の章ほど論文全体に関わる話で、後の章ほど細かい話です。
+書き始めるときは手引きの前の章を、書き上げて読み返すときは後の章を中心に確かめてください。</p>
 
 <p>各項目は、次の形で書いています。</p>
 
@@ -158,7 +158,8 @@
 <blockquote>
   <p>位置情報の取得間隔は10秒とした。
 停留所への接近を判定するには、停留所の間で少なくとも3回位置を取得し、進む向きを求める必要がある。
-停留所の間の最短の走行時間は約30秒なので、10秒間隔なら3回取得できる。</p>
+停留所の間の最短の走行時間は約30秒である。
+したがって、10秒間隔なら3回取得できる。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> どうしてこの方式や値を選んだのですか。
@@ -193,8 +194,10 @@
 
 <h3 id="fact-opinion">1.5 事実と意見を分ける</h3>
 
-<p><strong>なぜ:</strong> 結果から言えることと、書き手がそこから考えたことが混ざると、読者はどこまでが確かな話なのか分かりません。
-結果を述べる段落には測った事実を書き、解釈は「〜と考える」と分かる形で書いてください。
+<p><strong>なぜ:</strong> 結果から言える事実と書き手の意見が混ざると、読者はどこまでが確かな話なのか分かりません。
+結果を述べる段落には測った事実を書き、意見は「〜と考える」と分かる形で書いてください。
+「〜と考える」と書けば、書き手の意見であることがはっきりします。
+1.4で避けるよう書いた「〜と考えられる」とは、ここが違います。
 「わかった」「示している」と書くときは、その結果が本当にそこまで裏付けているかを確かめます。
 「〜も」「〜しか」のような評価を含む語や、「筆者は」のような書き手の視点も、結果の記述には入れません。</p>
 
@@ -220,6 +223,7 @@
 <h3 id="frame">1.6 題名、概要、序論、まとめを本文とそろえる</h3>
 
 <p><strong>なぜ:</strong> 多くの読者は、題名、概要、序論、まとめを読んで、何をした研究なのかをつかみます。
+ここでの本文は、序論とまとめの間にある章のことです。
 これらと本文が食い違うと、読者は研究の中身を取り違えます。
 書き上げたら、題名の語が目的と概要に出てくるか、目的の書き方が序論とまとめで同じか、まとめに本文にない話が入っていないかを確かめてください。
 見出しや「本章では〜を述べる」という予告も、本文の内容と合わせます。
@@ -238,7 +242,7 @@
   <p>(題名)蔵書検索の高速化
 (まとめ)本研究では、蔵書検索を高速化した。
 評価では、本を見つけるまでの時間が平均10分から3分に短くなった。
-今後の課題は、書架の配置が変わったときに地図を更新する方法である。</p>
+今後の課題は、書架の配置が変わったときに地図を更新する方法を検討することである。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> 概要だけを読んだ人に、何をしたのか伝わりますか。
@@ -260,14 +264,14 @@
 <p><strong>悪い例</strong></p>
 
 <blockquote>
-  <p>(研究背景の節で)傘を持たずに出かけて、雨に降られる人は多い。
+  <p>(研究背景の節で)本学の学生への調査[8]では、回答者の4割が、この1か月に傘を持たずに出かけて雨に降られていた。
 そこで本研究では、通知機能を持つアプリを開発した。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>(研究背景の節で)傘を持たずに出かけて、雨に降られる人は多い。
+  <p>(研究背景の節で)本学の学生への調査[8]では、回答者の4割が、この1か月に傘を持たずに出かけて雨に降られていた。
 (研究目的の節で)本研究の目的は、傘の持ち忘れを減らすことである。</p>
 </blockquote>
 
@@ -299,7 +303,7 @@
 
   <p>本研究の目的は蔵書検索の高速化である。
 検索の所要時間は、本の探索範囲に左右される。
-そこで、探索範囲を絞るため、書架の配置図を作成した。</p>
+そこで、本のある書架を地図上で示して探索範囲を絞るため、書架の配置図を作成した。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> それを知らない人に一言で説明するとしたら、何と言いますか。
@@ -324,7 +328,7 @@
   <p>位置の補正には XYZ(Extended Yard Zoning)を用いた。
 XYZ は地図を格子に区切って座標を補正する手法である[1]。
 貸出台帳は、図書室が利用者ごとの貸出履歴を記録している表である。
-本研究ではこれを移行した。</p>
+本研究では、これを紙の台帳から本システムのデータベースへ移行した。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> この略語は何の略ですか。
@@ -444,7 +448,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
   <p>2種類の方式で、応答時間を比較した。
 応答時間の測定結果を図5.1に示す。
 横軸は利用者数、縦軸は応答時間である。
-利用者が50人を超えると応答時間が急に増えている。</p>
+利用者が50人までは1秒以下であった応答時間が、60人では4秒に増えている。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> この図から何を読み取ってほしいのか、本文に書いてありますか。
@@ -485,7 +489,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 1文ずつ段落を分けると、話のまとまりが読者に見えません。
 逆に、1つの段落に別の話が入っていると、読者は話が切り替わったことに気付けません。
 前の段落の続きの話なら同じ段落にまとめ、話が変わるところで段落を分けてください。
-「しかし」「そこで」から問題の提示や自分の研究の話に移るところは、段落の変わり目になることが多いです。</p>
+「しかし」や「そこで」で始まり、問題の提示や自分の研究の話に移る文の前は、段落の変わり目になることが多いです。</p>
 
 <p><strong>悪い例</strong></p>
 
@@ -608,15 +612,15 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 
 <blockquote>
   <p>(設計の章で)本システムは、入力された語句で蔵書を検索し、結果を一覧で表示した。
-(評価の章で)検索時間は、従来より短くなってきている。
+(評価の章で)検索時間は、改修前のシステムより短くなってきている。
 (まとめの章で)本研究では、蔵書検索の時間を短くする。</p>
 </blockquote>
 
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>(設計の章で)本システムは、入力された語句で蔵書を検索し、結果を一覧で表示する。
-(評価の章で)検索時間は、従来より短い。
+  <p>(設計の章で)本システムは、利用者が入力した語句で蔵書を検索し、結果を一覧で表示する。
+(評価の章で)検索時間は、改修前のシステムより短い。
 (まとめの章で)本研究では、蔵書検索の時間を短くした。</p>
 </blockquote>
 
@@ -627,7 +631,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 <h3 id="collocation">5.3 文として成り立つか確かめる</h3>
 
 <p><strong>なぜ:</strong> 主語と述語、目的語と動詞の組み合わせがおかしいと、読者は何を言いたいのかを推測するしかありません。
-述語が抜けた文や、途中で形が変わった文も同じです。
+述語が抜けた文や、途中で主語と述語がねじれた文も同じです。
 主語と述語だけを抜き出して読むと、気付きやすくなります。</p>
 
 <p><strong>悪い例</strong></p>
@@ -654,7 +658,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 <h3 id="particle">5.4 助詞と限定の語を選ぶ</h3>
 
 <p><strong>なぜ:</strong> 助詞を取り違えると、文が不自然になります。
-また、「は」「主要な」「など」は、文脈によっては、ほかにも何かあるように読者に思わせます。</p>
+また、「は」「主要な」「など」は、文脈によってはほかにも何かあるように読者に思わせます。</p>
 
 <p><strong>悪い例</strong></p>
 
@@ -675,7 +679,8 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 
 <h3 id="comma">5.5 読点は意味の切れ目に打つ</h3>
 
-<p><strong>なぜ:</strong> 読点が多すぎると文が細切れになり、少なすぎたり位置がずれていたりすると、係り先を読み違えます。
+<p><strong>なぜ:</strong> 読点が多すぎると、文が細切れになります。
+少なすぎたり位置がずれていたりすると、読者は係り先を読み違えます。
 読点は、意味の切れ目に打ってください。
 語を並べる読点と文の切れ目の読点が1文に混ざるときは、並べる側を「・」か「と」にします。</p>
 
@@ -730,7 +735,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 
 <h3 id="padding">5.7 決まり文句で文を水増ししない</h3>
 
-<p><strong>なぜ:</strong> 「〜を行う」「〜することができる」のような言い回しは、文を長くするだけで、中身を増やしません。
+<p><strong>なぜ:</strong> 「〜を行う」「〜することができる」のような決まり文句は、文を長くするだけで、中身を増やしません。
 どの文も同じ動詞になり、単調にもなります。
 全部をなくす必要はありません。
 短く言えるなら、短くしてください。</p>
@@ -750,14 +755,14 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 </blockquote>
 
 <p><strong>確かめる問い:</strong> 「〜できる」「〜する」と短く言えませんか。
-同じ言い回しが、ほかの文にもありませんか。</p>
+同じ決まり文句が、ほかの文にもありませんか。</p>
 
 <h3 id="same-word">5.8 同じ語や要らない語を削る</h3>
 
 <p><strong>なぜ:</strong> 1文の中や隣り合う文で同じ語が重なると、くどく読みにくくなります。
 消しても意味が変わらない語(「実際に」「について」など)も、同じように文を重くします。
-「本研究では」「また」のような前置きや接続語を、文ごとに付けるのも同じです。
-どれも削ってください。</p>
+「本研究では」「また」のような前置きや接続詞を、文ごとに付けるのも同じです。
+重なった語は片方を消すか言い換え、要らない語や前置きは削ってください。</p>
 
 <p><strong>悪い例</strong></p>
 
@@ -772,7 +777,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>検索ボタンを押すと検索を開始する。
+  <p>検索ボタンを押すと、入力した語句を含む蔵書を探す。
 在庫データは管理者が更新する。</p>
 
   <p>本研究では検索機能と一覧機能を開発した。</p>
@@ -922,7 +927,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 <p><strong>良い例</strong></p>
 
 <blockquote>
-  <p>したがって、貸出回数が最も多い書籍のみを表示する。</p>
+  <p>したがって、貸出回数が最も多い本のみを表示する。</p>
 </blockquote>
 
 <p><strong>確かめる問い:</strong> 論文なら、この語をどう書きますか。</p>
@@ -932,7 +937,7 @@ XYZ は地図を格子に区切って座標を補正する手法である[1]。
 <h2 id="checklist">7. 提出前のチェックリスト</h2>
 
 <p>PR を送る前に、次のことを確かめてください。
-どれも、エディタの検索、textlint の警告、文献欄の見直しで見つけられます。
+多くは、エディタの検索、textlint の警告、文献欄の見直しで見つけられます。
 textlint は日本語の文章の誤りを指摘する道具で、研究室の執筆環境に入っています。</p>
 
 <h3 id="checklist-common">どの形式でも</h3>
@@ -940,10 +945,10 @@ textlint は日本語の文章の誤りを指摘する道具で、研究室の�
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>誤字脱字がない。</strong>
 助詞の重複(「をを」)、送り仮名の不揃い、製品名の綴りと大文字小文字を確かめてください。
-差分だけでも読み返してください。</li>
+PR の差分だけでも読み返してください。</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>全角と半角が正しい。</strong>
 全角空白、全角の英数字、「,」と「、」の混在がないことを確かめてください。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>ソースは1文ごとに改行している。</strong>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>原稿のソースファイルは1文ごとに改行している。</strong>
 1行に何文も書くと、PR の差分でどの文を直したのかが見えにくくなります。</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>文献を正しい場所で、正しい形で引用している。</strong>
 引用の場所や形が正しくないと、何の根拠なのか、どの文献なのかが読者に分かりません。
@@ -968,6 +973,9 @@ Web ページは、ページのタイトルと閲覧日を書きます。</li>
       <li>節: <code class="language-plaintext highlighter-rouge">\ref{sec:result}で述べる</code>(「節」は付けない)</li>
       <li>章: <code class="language-plaintext highlighter-rouge">第\ref{chap:design}章</code></li>
     </ul>
+
+    <p>PDF では、章の見出しは「第1章」と表示され、節の見出しは「2.3」のように番号だけが表示されます。
+参照もこれに合わせて、章には「第〜章」を付け、節には「節」を付けません。</p>
   </li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>英字の語と和文の間に空白がある。</strong>
 空白がないと LaTeX がそこで行を折り返せず、長い語が右の余白にはみ出します。
@@ -976,13 +984,13 @@ Web ページは、ページのタイトルと閲覧日を書きます。</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>数値と単位の間に普通の空白を入れていない。</strong>
 空白を入れずに <code class="language-plaintext highlighter-rouge">200Hz</code> と書くか、細い空白 <code class="language-plaintext highlighter-rouge">\,</code> を使って <code class="language-plaintext highlighter-rouge">200\,Hz</code> と書きます。
 普通の空白だと、数値と単位が別の行に分かれることがあります。</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong><code class="language-plaintext highlighter-rouge">\cite</code> は句点の前に置いている。</strong>
-例: <code class="language-plaintext highlighter-rouge">用いた\cite{sample}。</code></li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>特殊文字をエスケープしている。</strong>
 <code class="language-plaintext highlighter-rouge">_</code>、<code class="language-plaintext highlighter-rouge">%</code>、<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">~</code> は、そのままでは書けません(例: <code class="language-plaintext highlighter-rouge">book\_id</code>)。</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>レイアウトを手で強制していない。</strong>
 本文に <code class="language-plaintext highlighter-rouge">\\</code>、<code class="language-plaintext highlighter-rouge">\newpage</code> を使わないでください。
-図表の位置指定は <code class="language-plaintext highlighter-rouge">[htbp]</code> にし、<code class="language-plaintext highlighter-rouge">[H]</code> は使わないでください。</li>
+文章を直したときに、不自然な改行や空白が残ります。
+図表の位置指定は <code class="language-plaintext highlighter-rouge">[htbp]</code> にし、<code class="language-plaintext highlighter-rouge">[H]</code> は使わないでください。
+<code class="language-plaintext highlighter-rouge">[H]</code> で図表の位置を固定すると、入りきらない分だけページの下に大きな空白ができます。</li>
 </ul>
 
 <hr />
